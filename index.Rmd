@@ -24,9 +24,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 --- 
 
-# Mais informações sobre mim
+# Mais sobre mim
 
 Acesse: [Leonardo Lois Rodrigues](info/index.html){target="_blank"}
+
+Me chamo Leonardo sou professor Especializado em Matemática e Mestrando em Matemática pelo PROFMAT - UFSJ - CAP
 
 # Página dos alunos da disciplina
 

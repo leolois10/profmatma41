@@ -1,13 +1,13 @@
 ---
 title: "Leonardo Lois Rodrigues"
-image: "leo.png"
+image: "leo.jpeg"
 links:
   - label: GitHub
     url: "https://github.com/"
-  - label: Email
-      url: "mailto:leolois10profmat2022@gmail.com"
+  - label: Instagram
+    url: "https://www.instagram.com/leoloismat?igsh=YzM2MXB4b2U0MzRw"
 output:
   postcards::jolla
 ---
  
-Descrição sobre o aluno(a)!
+Professor de Especializado em Matemática/Mestrando em Matemática pelo PROFMAT UFSJ-CAP
