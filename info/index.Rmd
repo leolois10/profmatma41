@@ -3,11 +3,17 @@ title: "Leonardo Lois Rodrigues"
 image: "leo.jpeg"
 links:
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://leolois10.github.io/profmatma41/"
   - label: Instagram
     url: "https://www.instagram.com/leoloismat?igsh=YzM2MXB4b2U0MzRw"
+  - label: GitHub2
+    url: "https://leolois10.github.io/PROFMAT412-TESTE/"
+  - label: YouTube
+    url: "https://www.youtube.com/"
+  - label: PHET/Simulador
+    url: "https://phet.colorado.edu/pt_BR/simulations/browse"
 output:
   postcards::jolla
 ---
  
-Professor de Especializado em Matemática/Mestrando em Matemática pelo PROFMAT UFSJ-CAP
+Professor Especializado em Matemática/Mestrando em Matemática pelo PROFMAT UFSJ-CAP
