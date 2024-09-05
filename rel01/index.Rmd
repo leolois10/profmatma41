@@ -1,6 +1,6 @@
 ---
-title: "Relatório 01 - Introdução ao R"
-author: "Ben Dêivide"
+title: "Relatório 01 - Descrever as ideias básicas sobre Markdow"
+author: "Leonardo Lois Rodrigues"
 date: "06/09/2024"
 header-includes:
   - \usepackage{titling}
@@ -34,10 +34,15 @@ knitr::opts_chunk$set(echo = TRUE)
 Descrever as ideias básicas sobre Markdow:
 
 Diante do objetivo do relatório, apresentaremos nas próximas subseções, os pontos a serem discutidos.
+
 - O que é o Markdow?
+
 - Como inserir um link no Markdow?
+
 - Como fazer uma lista no Markdow?
+
 - Como fazer uma tabela no Markdow?
+
 - Como adicionar imagens no Markdow?
 
 
@@ -225,9 +230,6 @@ yarn filecheck files/en-us/web/css/my-cool-image.png --save-compression.
 FONTE:
 
 https://developer.mozilla.org/pt-BR/docs/MDN/Writing_guidelines/Howto/Images_media
-
-
-
 
 
 
