@@ -27,27 +27,208 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 --- 
+# Apresentação do relatório
 
 # Objetivo
 
-Descrever as ideias básicas sobre o ambiente R:
-
-- Como instalar o R e RStudio;
-- Diferenças entre o R e a IDE RStudio;
-- Como o R trabalha;
-- Comandos elementares;
-- Objetos;
-- Manipulação com objetos;
-- Importação de dados;
-- Pacotes:
-  - Instalação;
-  - Como usar.
-
-# Apresentação do relatório
+Descrever as ideias básicas sobre Markdow:
 
 Diante do objetivo do relatório, apresentaremos nas próximas subseções, os pontos a serem discutidos.
+- O que é o Markdow?
+- Como inserir um link no Markdow?
+- Como fazer uma lista no Markdow?
+- Como fazer uma tabela no Markdow?
+- Como adicionar imagens no Markdow?
 
-## Como instalar o R e o RStudio
+
+- O que é o Markdow?
+ 
+ Markdown Syntax é uma sintaxe usada para padronizar e facilitar formatação de texto na web, utilizada em aplicativos como Slack e GitHub. Textos estilizados com Markdown são, na maioria dos casos, apenas texto com caracteres não-alfabéticos, como #, \* e ![](), usados para a configuração de títulos, listas, itálico, negrito e inserção de imagens.
+
+- Como inserir um link no Markdow?
+
+Links
+Existem duas formas de inserir link em Markdown, através de um link direto ou usando um texto-âncora:
+
+Texto-âncora: utilize os caracteres [](), adicionando entre chaves o texto que você quer que apareça, e entre os parênteses, o endereço de destino, no formato [exemplo](https://exemplo.com/).
+
+Link direto: envolva o endereço da web em chaves <>. O endereço ficará visível e será clicável pelo usuário. O endereço em forma de link direto tem o formato <https://exemplo.com/>.
+
+- Como fazer uma lista no Markdow?
+
+Neste tutorial, veremos um dos recursos do markdown estendido: como criar listas de tarefas, listas de verificação ou listas de tarefas pendentes."
+
+"Markdown é uma excelente linguagem de marcação para escrever documentos bem formatados e mínimos. O Markdown em si é uma linguagem de marcação leve desenvolvida por John Gruber e Aaron Swartz em 2004. Ele permite que você inclua marcação de formatação em texto simples e os processe em documentos HTML renderizados.
+O Markdown é amplamente adotado em muitas áreas, incluindo geradores de sites estáticos, documentação de código, etc.
+
+FIGURA
+
+Lista de tarefas/caixa de seleção
+Uma lista de tarefas ou caixa de seleção é uma formatação simples que permite que você crie uma lista de itens e inclua uma caixa de seleção. Você pode marcar esse valor como marcado ou desmarcado, dependendo do status do alvo.
+
+Podemos criar caixas de seleção em markdown usando um traço, um espaço e um colchete. Tenha em mente que esse é um recurso estendido e dependerá do aplicativo Markdown.
+
+FIGURA
+
+A sintaxe abaixo mostra como criar uma caixa de seleção desmarcada no Markdown:
+
+- []
+Por exemplo:
+
+# Bancos de dados populares
+- [ ] Oracle
+- [ ] MySQL
+- [ ] Microsoft SQL Server
+- [ ] PostgreSQL
+- [ ] Redis
+- [ ] Elasticsearch
+- [ ] SQLite
+- [ ] MariaDB
+- [ ] Solr
+- [ ] Neo4j
+- [ ] HBase
+- [ ] Couchbase
+O Markdown acima deve renderizar a saída conforme mostrado:
+
+FIGURA
+
+Você também pode criar uma caixa de seleção adicionando um x ao par de colchetes. A sintaxe é como mostrada:
+
+- [x]
+Por exemplo:
+
+# Bancos de dados populares
+- [ ] Oracle
+- [x] MySQL
+- [x] Microsoft SQL Server
+- [x] PostgreSQL
+- [ ] Redis
+- [ ] Elasticsearch
+- [x] SQLite
+- [x] MariaDB
+- [ ] Solr
+- [ ] Neo4j
+- [ ] HBase
+- [x] Couchbase
+O código markdown acima deve retornar uma saída renderizada conforme mostrado:
+
+FIGURA
+
+E com isso, você tem uma maneira de criar caixas de seleção, listas de verificação ou listas de tarefas em Markdown.
+
+Conclusão
+Neste tutorial, exploramos como criar caixas de seleção no Markdown usando a sintaxe de hífen, espaço e colchetes.
+
+FONTE: https://linuxhint-com.translate.goog/markdown-checkbox/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=sc
+
+
+- Como fazer uma tabela no Markdow?
+
+Você pode criar tabelas com pipes | e hífens -. Hifens são usados para criar o cabeçalho de cada coluna, enquanto as barras verticais separam cada coluna. Você deve incluir uma linha em branco antes da tabela para ela ser construída corretamente.
+
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+TABELA 
+
+Captura de tela de uma tabela Markdown com duas colunas de largura igual, conforme renderizada no GitHub. Os cabeçalhos são renderizados em negrito e as linhas de conteúdo alternativo têm sombreamento cinza.
+
+As barras verticais em cada extremo da tabela são opcionais.
+
+As células podem ter largura variada e não precisam estar alinhadas perfeitamente com as colunas. Deve ter no mínimo três hifens em cada coluna da linha do cabeçalho.
+
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
+
+TABELA
+
+Captura de tela de uma tabela Markdown com duas colunas de largura diferente, conforme renderizada no GitHub. As linhas listam os comandos "git status" e "git diff" e as respectivas descrições.
+
+Se você estiver editando tabelas e snippets de código com frequência, poderá se beneficiar da habilitação de uma fonte de largura fixa em todos os campos de comentário no GitHub. Para obter mais informações, confira "Sobre gravação e formatação no GitHub".
+
+- Como adicionar imagens e mídia?
+
+Adicionando imagens
+
+Para adicionar uma imagem a um documento, adicione seu arquivo de imagem à pasta do documento e, em seguida, faça referência à imagem no arquivo index.md do documento usando um elemento <img> ou a sintaxe Markdown equivalente.
+
+Vamos percorrer um exemplo:
+
+Comece com um novo branch de trabalho com o conteúdo mais recente do branch main do remoto mdn.
+shell
+Copy to Clipboard
+cd ~/caminho/para/mdn/conteúdo
+git checkout principal
+git pull mdn principal
+# Execute "yarn" novamente apenas para garantir que você
+# instalou a última dependência do Yari.
+yarn
+git checkout -b minhas-imagens
+Adicione sua imagem à pasta de documentos. Para este exemplo, vamos supor estamos adicionando uma nova imagem ao documento files/en-us/web/css.
+shell
+Copy to Clipboard
+cd ~/caminho/para/mdn/content
+cp ../some/path/my-cool-image.png files/en-us/web/css/
+Execute filecheck em cada imagem, que pode reclamar se algo estiver errado. Para obter mais detalhes, consulte a seção Compactando imagens.
+shell
+Copy to Clipboard
+yarn filecheck files/en-us/web/css/my-cool-image.png
+Faça referência à sua imagem no documento com um elemento <img> e um atributo alt dentro de files/en-us/web/css/index.md:
+html
+Copy to Clipboard
+<img src="my-cool-image.png" alt="Minha imagem legal" />
+Adicione e confirme todos os arquivos excluídos, criados e modificados, bem como empurre sua ramificação para sua bifurcação:
+shell
+Copy to Clipboard
+git add files/en-us/web/css/my-cool-image.png files/en-us/web/css/index.html
+git commit
+git push -u origin my-images
+
+Agora você está pronto para criar seu solicitação pull.
+Adicionando texto alternativo às imagens
+Cada imagem, ![] e <img>, deve incluir o texto alt. Forneça um texto curto e conciso, fornecendo todas as informações relevantes que a imagem transmite. Este texto é lido por aqueles que não conseguem ver a imagem.
+
+O conteúdo do texto alt difere com base no contexto. Por exemplo, se a foto de um cachorro é o avatar de uma avaliação de comida de cachorro Yuckymeat, alt="Fluffy" é apropriado. Se a foto for a imagem do cachorro em um site de adoção de resgate de animais, o alt="Fluffy, um terrier tricolor de tamanho médio com cabelo muito curto, brincando com um brinquedo para mastigar." é apropriado, pois a imagem transmite informações relevantes para possíveis pais de cães, que não é duplicado no texto ao redor. Raramente há necessidade de descrever a própria imagem; Fofo estar ao ar livre com uma coleira vermelha e uma coleira azul não adiciona informações úteis em nenhum dos contextos.
+
+O texto alternativo deve incluir todas as informações que a imagem transmite que um usuário com visão pode acessar e é relevante para o contexto; nada mais. Mantenha-o curto, preciso e útil.
+
+A sintaxe em markdown e HTML:
+
+md
+Copy to Clipboard
+![<alt-text>](<url-of-image>)
+html
+Copy to Clipboard
+<img alt="<alt-text>" src="<url-of-image>" />
+Exemplos:
+
+html
+Copy to Clipboard
+![Logotipo OpenWebDocs: Carle, o verme dos livros](carle.png)
+<img alt="OpenWebDocs Logo: Carle, o verme dos livros" src="carle.png" />
+Embora as imagens puramente decorativas devam ter um alt vazio, as imagens adicionadas à documentação MDN devem ter um propósito e, portanto, exigir uma descrição de string não vazia.
+
+Comprimindo imagens
+Ao adicionar imagens a uma página no MDN Web Docs, certifique-se de que elas sejam compactadas o máximo possível (sem degradar a qualidade) para economizar no tamanho do download para nossos leitores. Na verdade, se você não fizer isso, nosso processo de CI falhará e os resultados da compilação avisarão que algumas de suas imagens são muito grandes.
+
+A melhor maneira de compactar as imagens é usando a ferramenta de compactação integrada. Você pode compactar uma imagem apropriadamente usando o comando filecheck com a opção --save-compression. Esta opção comprime a imagem o máximo possível e substitui o original pela versão comprimida. Por exemplo:
+
+shell
+Copy to Clipboard
+yarn filecheck files/en-us/web/css/my-cool-image.png --save-compression.
+
+FONTE:
+
+https://developer.mozilla.org/pt-BR/docs/MDN/Writing_guidelines/Howto/Images_media
+
+
+
+
 
 
 
