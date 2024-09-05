@@ -158,9 +158,10 @@ Captura de tela de uma tabela Markdown com duas colunas de largura diferente, co
 
 Se você estiver editando tabelas e snippets de código com frequência, poderá se beneficiar da habilitação de uma fonte de largura fixa em todos os campos de comentário no GitHub. Para obter mais informações, confira "Sobre gravação e formatação no GitHub".
 
-- Como adicionar imagens e mídia?
+- Como adicionar imagens e mídia no Markdon?
 
-image: "ufsj.png"
+<img src = "ufsj.png">
+
 
 Adicionando imagens
 
