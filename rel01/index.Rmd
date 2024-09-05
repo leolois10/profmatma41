@@ -160,6 +160,8 @@ Se você estiver editando tabelas e snippets de código com frequência, poderá
 
 - Como adicionar imagens e mídia?
 
+image: "ufsj.png"
+
 Adicionando imagens
 
 Para adicionar uma imagem a um documento, adicione seu arquivo de imagem à pasta do documento e, em seguida, faça referência à imagem no arquivo index.md do documento usando um elemento <img> ou a sintaxe Markdown equivalente.
