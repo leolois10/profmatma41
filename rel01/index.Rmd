@@ -192,3 +192,4 @@ FONTE:
 
 https://www.inf.ufsc.br/~j.barreto/cca/tratexto/latex.htm
 
+
