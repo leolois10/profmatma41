@@ -187,3 +187,8 @@ Para fazer com que a edição de documentos grandes sejam mais gerenciáveis, vo
 O estilo de impressão escolhido para o documento determina todos os aspectos que serão impressos na aparência do seu documentos. Um estilo de impressão é uma coleção de comandos LaTeX que definem o tipo, o tamanho da página, o espaço entre as linhas, a localização e aparência do cabeçalho e rodapé. Estes estilos também determinam a numeração e quebras de página e muitos outros pontos tipográficos.
 
 Existem uma variedade de estilos: article (ou artigo), book (livro), report (relatórios), etc. No preâmbulo também são ajustados além do estilo (ou classe para LaTeX 2e) do documento, o tamanho de fontes, número de colunas, título, autor, data, arquivos de entrada, estilo bibliográfico e as definições próprias que você queira utilizar.
+
+FONTE:
+
+https://www.inf.ufsc.br/~j.barreto/cca/tratexto/latex.htm
+
