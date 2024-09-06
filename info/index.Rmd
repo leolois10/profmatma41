@@ -9,7 +9,7 @@ links:
   - label: GitHub2
     url: "https://leolois10.github.io/PROFMAT412-TESTE/"
   - label: YouTube
-    url: "https://www.youtube.com/"
+    url: "https://youtube.com/leoloisprofmat/"
   - label: PHET/Simulador
     url: "https://phet.colorado.edu/pt_BR/simulations/browse"
 output:
