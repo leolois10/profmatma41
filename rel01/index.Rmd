@@ -51,7 +51,17 @@ Diante do objetivo do relatório, apresentaremos nas próximas subseções os po
 
 - O que é Latex?
 
-- Estrutura de um documento LaTeX
+- Como iniciar um novo projeto?
+
+- O que é preâmbulo na escrita Latex?
+
+- Como inserir Capítulos, seção e subseção em Latex?
+
+- Como criar tabelas no Latex?
+
+- Adicionando matemática a LaTeX!
+
+- Breve Conclusão.
 
 
 # - Markdownn
@@ -68,8 +78,12 @@ Noções básicas sobre o Markdown
 As seções a seguir descrevem as noções básicas de criação no Markdown.
 
 Cabeçalhos
+
 Para criar um cabeçalho, use uma marca de hash (#) no início de uma linha:
-(Observação: o hífem nos comandos abaixo, não faz parte do comando, foi usada somente para o comando não ser usado no sumário deste relatório 01)
+
+Observação: o hífem nos comandos no RStudio, não faz parte do comando, foi usada somente para o comando não ser usado no sumário deste relatório 01. 
+
+Como esconder o comentário acima após ele ser compilado?
 
 - # This is level 1 (article title)
 - ## This is level 2
@@ -128,11 +142,12 @@ Link direto: envolva o endereço da web em chaves <>. O endereço ficará visív
 
 Nesta etapas veremos um dos recursos do markdown estendido: como criar listas de tarefas, listas de verificação ou listas de tarefas pendentes."
 
-"Markdown é uma excelente linguagem de marcação para escrever documentos bem formatados e mínimos. O Markdown em si é uma linguagem de marcação leve desenvolvida por John Gruber e Aaron Swartz em 2004. Ele permite que você inclua marcação de formatação em texto simples e os processe em documentos HTML renderizados.
+Markdown é uma excelente linguagem de marcação para escrever documentos bem formatados e mínimos. O Markdown em si é uma linguagem de marcação leve desenvolvida por John Gruber e Aaron Swartz em 2004. Ele permite que você inclua marcação de formatação em texto simples e os processe em documentos HTML renderizados.
 O Markdown é amplamente adotado em muitas áreas, incluindo geradores de sites estáticos, documentação de código, etc.
 
 
 Lista de tarefas/caixa de seleção
+
 Uma lista de tarefas ou caixa de seleção é uma formatação simples que permite que você crie uma lista de itens e inclua uma caixa de seleção. Você pode marcar esse valor como marcado ou desmarcado, dependendo do status do alvo.
 
 Podemos criar caixas de seleção em markdown usando um traço, um espaço e um colchete. Tenha em mente que esse é um recurso estendido e dependerá do aplicativo Markdown.
@@ -220,13 +235,16 @@ Se você estiver editando tabelas e snippets de código com frequência, poderá
 
 ## - Como adicionar imagens e mídia no Markdon?
 
+Comandos:  (interno a < > colocamos: img src = "logo") ou utilizamos o comando "Ponto de exclamação!, colchetes [figura 1 ] e (imagem)". 
+
 Adicionando imagens
 
 Para adicionar uma imagem a um documento, adicione seu arquivo de imagem à pasta do documento (neste exemplo nosso, esta na pasta rel01) e, em seguida, faça referência à imagem no arquivo index.md do documento usando os símbolos < > e internamente aos símbolos use: img src = ufsj.png. Ou a sintaxe Markdown equivalente (Ou seja, existem outras formas de inserir imagens no Markdown). 
 
 Veja o exemplo a seguir:
 
-<img src = "ufsj.png">
+![Figura 1](ufsj.png)
+
 
 FONTE:
 
@@ -240,16 +258,153 @@ LaTeX é um sistema de preparação de documentos, uma versão especial do progr
 
 Na verdade, LaTeX representa uma balança entre a funcionalidade e a facilidade de uso. Um bom exemplo disso é quando se escreve um documento longo onde tem-se que utilizar várias citações, referências cruzadas, numerações (capítulos, seções, subseções, figuras, tabelas, etc.). Se algo ocorre e tivermos que mudar uma numeração (acrescentando ou retirando partes do texto) todo o resto se complica. Teremos que mudar as numerações, as referências cruzadas, etc. Isto muitas vezes demanda um grande tempo nos processadores de texto "what you see is what you get" e está susceptível a erros incríveis. Assim o LaTeX é um tratador de textos e as mudanças podem ser feitas rapidamente.
 
-## Estrutura de um documento LaTeX:
-
-Para fazer com que a edição de documentos grandes sejam mais gerenciáveis, você pode separá-los em um documento "mestre" e uma série de outros sub-documentos. O documento mestre e todos os sub-documentos devem estar num mesmo diretório. O sumário, as listas de figuras e tabela, o índice e todas as referências cruzadas são criadas no documento mestre. Portanto, a estrutura do documento em LaTeX geralmente é constituída de um arquivo fonte salvo em com a extensão .tex contendo um preâmbulo (ou documento mestre) e dos arquivos .tex que compõem documento propriamente dito e da base de dados bibliográficas armazenada opcionalmente num arquivo com a extensão .bib e outros arquivos. É aconselhável que você não faça arquivos de entrada muito longos. Isto pode dificultar a identificação de erros na hora da compilação. A principio, escreva seu documento dividindo-os em vários arquivos de entrada. E quando for compilar faça um a um.
-
-O estilo de impressão escolhido para o documento determina todos os aspectos que serão impressos na aparência do seu documentos. Um estilo de impressão é uma coleção de comandos LaTeX que definem o tipo, o tamanho da página, o espaço entre as linhas, a localização e aparência do cabeçalho e rodapé. Estes estilos também determinam a numeração e quebras de página e muitos outros pontos tipográficos.
-
-Existem uma variedade de estilos: article (ou artigo), book (livro), report (relatórios), etc. No preâmbulo também são ajustados além do estilo (ou classe para LaTeX 2e) do documento, o tamanho de fontes, número de colunas, título, autor, data, arquivos de entrada, estilo bibliográfico e as definições próprias que você queira utilizar.
-
 FONTE:
 
 https://www.inf.ufsc.br/~j.barreto/cca/tratexto/latex.htm
+
+Para escrever o texto em Latex, você pode instalar o TexStudio no seu computador e usar esta versão até off line ou utilizar a versão on line do Latex, chamada Overleaf. Onde tudo é feito on line e de forma gratuita, sem precisar instalar qualquer programa. Aqui neste relatório vamos explorar o modo Overleaf, que não é muito distinta do Tex Studio.
+
+Para começar a usar o Overleaf, vá para www.overleaf.com.
+Se você não tiver uma conta, digite seu endereço de e-mail e defina uma senha nas caixas correspondentes abaixo Comece agora, clique em Registrar e pronto, você será redirecionado para a página de gerenciamento de projetos, onde será orientado sobre como criar um novo projeto.
+
+## - Como iniciar um novo projeto?
+
+Se você já possui uma conta, clique em Login no canto superior direito, digite seu e-mail e senha e clique no botão Login.	
+Depois de fazer login, você deverá ver a página Gerenciamento de projetos no verso	
+Iniciando um novo projeto
+Para iniciar um novo projeto do zero, na página principal, clique no botão Novo Projeto, você verá o próximo menu suspenso	
+e clique em Projeto em Branco. Uma caixa será aberta onde você deve inserir o nome do seu novo projeto e clicar em Criar.	
+Depois disso, você será redirecionado para o editor.	
+Lá, um novo documento é criado com algumas informações básicas já preenchidas. Você pode começar a editar seu arquivo .tex agora, para visualizar as alterações, clique em Recompilar. 
+Outra opção para iniciar um novo projeto do zero é usar um Projeto de Exemplo. Na página Gerenciamento de projetos, clique no botão Novo projeto (primeira imagem nesta seção) e no menu suspenso clique em Projeto de exemplo, você verá uma caixa de texto onde deve inserir o nome do seu novo projeto (segunda imagem nesta seção), agora clique em Criar e você será redirecionado para o editor onde um documento de amostra será aberto.
+
+
+## - O que é preâmbulo na escrita Latex?
+
+O preâmbulo de um documento
+
+![Figura 2](latex0.png) 
+
+A captura de tela acima mostra o Overleaf armazenando um documento LaTeX como um arquivo chamado : a extensão do arquivo é, por convenção, usada ao nomear arquivos contendo o código LaTeX do seu documento. 
+
+O exemplo anterior mostrou como o conteúdo do documento foi inserido após o comando; No entanto, tudo em seu arquivo que aparece antes desse ponto é chamado de Preâmbulo, que atua como a seção "Configuração" do documento. No preâmbulo, você define a classe do documento (tipo) junto com especificidades, como idiomas a serem usados ao escrever o documento; carregando pacotes que você gostaria de usar (mais sobre isso mais tarde), e é onde você aplicaria outros tipos de configuração. \begin{document}.tex
+
+Um preâmbulo mínimo de documento pode ter esta aparência:
+
+![Figura 3](latex1.png) 
+
+documentclass[12pt, letterpaper]{article}
+
+usepackage{graphicx}
+
+Onde define a classe geral (tipo) do documento. Parâmetros adicionais, que devem ser separados por vírgulas, são incluídos entre colchetes () e usados para configurar essa instância da classe article; ou seja, configurações que desejamos usar para este documento baseado em classe específica.
+
+documentclass[12pt, letterpaper]{article}[...]article
+
+Neste exemplo, os dois parâmetros fazem o seguinte:
+
+12pt: Define o tamanho da fonte
+
+letterpaper: Define o tamanho do papel
+
+É claro que outros tamanhos de fonte, podem ser usados, mas se nenhum for especificado, o tamanho padrão é 12pt . Quanto ao tamanho do papel, outros valores possíveis são e . Para obter mais informações, consulte o artigo sobre tamanho e margens da página. 
+
+A linha do preâmbulo
+
+usepackage{graphicx}
+
+é um exemplo de carregamento de um pacote externo (aqui, graphicx) para estender os recursos de LaTeX, permitindo que ele importe arquivos gráficos externos. Os pacotes LaTeX são discutidos na seção Localizando e usando pacotes LaTeX.
+
+Adicionar um título, autor e data ao nosso documento requer mais três linhas no preâmbulo (não o corpo principal do documento). Essas linhas são:
+
+title{My first LaTeX document}: o título do documento, author{Hubert Farnsworth}: aqui você escreve o nome do(s) autor(es) e, opcionalmente, o comando dentro das chaves: thanks{Funded by the Overleaf team.}: 
+
+Pode ser adicionado após o nome do autor, dentro das chaves do comando. Ele adicionará um sobrescrito e uma nota de rodapé com o texto dentro das chaves. Útil se você precisar agradecer a uma instituição em seu artigo.author
+
+date{August 2022}: você pode inserir a data manualmente ou usar o comando para compor a data atual toda vez que o documento for compilado today.
+
+Todos os comandos anteriores:
+
+documentclass,
+title,
+author,
+date,
+begin,
+maketitle,
+usepackage,
+latex,
+thanks,
+today e
+end. São antecedidos por barra, como na imagem acima.
+
+## - Como inserir Capítulos, seção e subseção em Latex?
+
+Capítulos, seções e subseções:
+
+Documentos mais longos, independentemente do software de autoria, geralmente são particionados em partes, capítulos, seções, subseções e assim por diante. O LaTeX também fornece comandos de estruturação de documentos, mas os comandos disponíveis e suas implementações (o que eles fazem) podem depender da classe de documento que está sendo usada. A título de exemplo, os documentos criados usando a classe podem ser divididos em partes, capítulos, seções, subseções e assim por diante, mas a classe não fornece (suporta) nenhum comando para fazer isso. 
+
+O próximo exemplo demonstra os comandos usados para estruturar um documento com base na classe: book
+
+![Figura 4](latex2.png) 
+
+Este exemplo produz a seguinte saída:
+
+![Figura 5](latex3.png) 
+
+## - Como criar tabelas no Latex?
+
+Os exemplos a seguir mostram como criar tabelas no LaTeX, incluindo a adição de linhas (regras) e legendas.
+
+Criando uma tabela básica em LaTeX
+Começamos com um exemplo mostrando como compor uma tabela básica:
+
+![Figura 6](latex4.png) 
+
+
+O ambiente é o método padrão LaTeX para criar tabelas. Você deve especificar um parâmetro para este ambiente, neste caso que avisa LaTeX que haverá três colunas e o texto dentro de cada uma deve ser centralizado. Você também pode usar para alinhar o texto à direita e à esquerda. O símbolo de alinhamento é usado para demarcar células individuais da tabela dentro de uma linha da tabela. Para encerrar uma linha da tabela, use o comando new line . Nossa tabela está contida em um ambiente para torná-la centralizada na largura do texto da página. tabular{c c c} & \\center
+
+Adicionando bordas
+O ambiente dá suporte a linhas horizontais e verticais (regras) como parte da tabela: tabular
+
+Para adicionar regras horizontais, acima e abaixo das linhas, use o comando barra hline.
+Para adicionar regras verticais, entre colunas, use o parâmetro de linha vertical |
+Neste exemplo, o argumento é que declara três colunas (centralizadas), cada uma separada por uma linha vertical (regra); Além disso, usamos para colocar uma régua horizontal acima da primeira linha e abaixo da linha final: {|c|c|c|} barra hline:
+
+![Figura 7](latex5.png) 
+
+## - Adicionando matemática a LaTeX
+
+Uma das principais vantagens de LaTeX é a facilidade com que as expressões matemáticas podem ser escritas. LaTeX fornece dois modos de escrita para composição matemática:
+
+Modo matemático embutido usado para escrever fórmulas que fazem parte de um parágrafo
+Modo matemático de exibição usado para escrever expressões que não fazem parte de um texto ou parágrafo e são compostas em linhas separadas
+Modo matemático embutido
+
+Vejamos um exemplo de modo matemático exibição:
+
+![Figura 8](latex6.png) 
+
+![Figura 9](latex7.png) 
+
+O próximo exemplo usa o ambiente que é fornecido pelo pacote, portanto, precisamos adicionar a seguinte linha ao nosso preâmbulo do documento: equation*amsmath.
+
+![Figura 10](latex8.png) 
+
+Este exemplo produz a seguinte saída:
+
+
+![Figura 11](latex8a.png) 
+
+
+FONTE:
+
+https://pt.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Display_math_mode
+
+
+# - Conclusão:
+
+Apresentamos neste relatório, duas ferramentas poderosissímas, para edição de textos. Que comportam imagens, links, figuras, tabelas, fórmulas matemáticas, ... Que acreditamos ser essenciais para serem utilizadas no seu texto científico. Mais informações, consulte as fontes indicadas no texto.
+
+
 
 
