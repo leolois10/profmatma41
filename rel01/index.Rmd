@@ -1,7 +1,7 @@
 ---
-title: "Relatório 01 - Descrever as ideias básicas sobre Markdow e Latex"
+title: "Relatório 02 - Estatística Descritiva"
 author: "Leonardo Lois Rodrigues"
-date: "06/09/2024"
+date: "13/09/2024"
 header-includes:
   - \usepackage{titling}
   - \pretitle{\begin{center}
@@ -29,42 +29,26 @@ knitr::opts_chunk$set(echo = TRUE)
 --- 
 # - Apresentação do relatório
 
-Markdow e Latex.
+Estatística Descritiva.
 
 # - Objetivo
 
-Descrever ideias básicas sobre Markdow e Latex.
+Descrever sobre Estatística Descritiva.
 
 Diante do objetivo do relatório, apresentaremos nas próximas subseções os pontos a serem discutidos.
 
-- O que é o Markdow?
+- Coleta, organização e tabulação de dados;
 
-- Como usar o Markdown para escrever a documentação técnica?
+- Gráficos;
 
-- Como inserir um link no Markdown?
+- Medidas de posição;
 
-- Como fazer uma lista no Markdown?
-
-- Como fazer uma tabela no Markdown?
-
-- Como adicionar imagens no Markdown?
-
-- O que é Latex?
-
-- Como iniciar um novo projeto?
-
-- O que é preâmbulo na escrita Latex?
-
-- Como inserir Capítulos, seção e subseção em Latex?
-
-- Como criar tabelas no Latex?
-
-- Adicionando matemática a LaTeX!
+- Medidas de dispersão
 
 - Breve Conclusão.
 
 
-# - Markdownn
+# - Estatística Descritiva:
 
 ## - O que é o Markdownn?
  
@@ -75,13 +59,14 @@ Markdown Syntax é uma sintaxe usada para padronizar e facilitar formatação de
 Os artigos técnicos da Adobe são escritos em uma linguagem de marcação simples chamada Markdown, que facilita a leitura e o aprendizado.
 
 Noções básicas sobre o Markdown
+
 As seções a seguir descrevem as noções básicas de criação no Markdown.
 
 Cabeçalhos
 
 Para criar um cabeçalho, use uma marca de hash (#) no início de uma linha:
 
-Observação: o hífem nos comandos no RStudio, não faz parte do comando, foi usada somente para o comando não ser usado no sumário deste relatório 01. 
+Observação: os hífens abaixo, não fazem parte do comando, foi usada somente para o comando não ser usado no sumário deste relatório 01. 
 
 Como esconder o comentário acima após ele ser compilado?
 
@@ -403,7 +388,7 @@ https://pt.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Display_math_mode
 
 # - Conclusão:
 
-Apresentamos neste relatório, duas ferramentas poderosissímas, para edição de textos. Que comportam imagens, links, figuras, tabelas, fórmulas matemáticas, ... Que acreditamos ser essenciais para serem utilizadas no seu texto científico. Mais informações, consulte as fontes indicadas no texto.
+Apresentamos neste relatório, duas ferramentas poderosíssimas, para edição de textos. Que comportam imagens, links, figuras, tabelas, fórmulas matemáticas, ... Que acreditamos ser essenciais para serem utilizadas no seu texto científico. Mais informações, consulte as fontes indicadas no texto.
 
 
 
