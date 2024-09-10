@@ -30,214 +30,47 @@ Estatística Descritiva.
 
 # - Objetivo
 
-Descrever ideias básicas sobre Markdow e Latex.
+Descrever sobre Estatística Descritiva.
 
 Diante do objetivo do relatório, apresentaremos nas próximas subseções os pontos a serem discutidos.
 
-- O que é o Markdow?
+- Coleta, organização e tabulação de dados;
 
-- Como usar o Markdown para escrever a documentação técnica?
+- Gráficos;
 
-- Como inserir um link no Markdown?
-
-- Como fazer uma lista no Markdown?
-
-- Como fazer uma tabela no Markdown?
-
-- Como adicionar imagens no Markdown?
-
-- O que é Latex?
-
-- Como iniciar um novo projeto?
-
-- O que é preâmbulo na escrita Latex?
-
-- Como inserir Capítulos, seção e subseção em Latex?
-
-- Como criar tabelas no Latex?
-
-- Adicionando matemática a LaTeX!
+- Medidas de posição e dispersão.
 
 - Breve Conclusão.
 
 
 # - Markdownn
 
+![Figura 7](latex5.png)
+
 ## - O que é o Markdownn?
- 
-Markdown Syntax é uma sintaxe usada para padronizar e facilitar formatação de texto na web, utilizada em aplicativos como Slack e GitHub. Textos estilizados com Markdown são, na maioria dos casos, apenas texto com caracteres não-alfabéticos, como #, \* e ![](), usados para a configuração de títulos, listas, itálico, negrito e inserção de imagens.
- 
+
 ## - Como usar o Markdown para escrever uma documentação técnica?
 
-Os artigos técnicos da Adobe são escritos em uma linguagem de marcação simples chamada Markdown, que facilita a leitura e o aprendizado.
-
-Noções básicas sobre o Markdown
-As seções a seguir descrevem as noções básicas de criação no Markdown.
-
-Cabeçalhos
-
-Para criar um cabeçalho, use uma marca de hash (#) no início de uma linha:
-
-Observação: o hífem nos comandos no RStudio, não faz parte do comando, foi usada somente para o comando não ser usado no sumário deste relatório 01. 
-
-Como esconder o comentário acima após ele ser compilado?
-
-- # This is level 1 (article title)
-- ## This is level 2
-- ### This is level 3
-- #### This is level 4
-- ##### This is level 5
-
-Texto básico
-
-Um parágrafo não requer sintaxe especial no Markdown.
-
-Para formatar o texto como negrito, coloque-o entre dois asteriscos. Para formatar o texto como itálico, coloque-o entre um único asterisco:
-
-   This text is **bold**.
-   
-   This text is *italic*.
-   
-   This text is both ***bold and italic***.
-   
-
-Para ignorar os caracteres de formatação do Markdown, use \ antes do caractere:
-
-This is not \*italicized\* type.
-
-
-Listas numeradas e listas de itens
-Para criar listas numeradas, comece uma linha com 1. ou 1), mas não use ambos os formatos dentro da mesma lista. Você não precisa especificar os números. O GitHub faz isso para você.
-
-1. This is step 1.
-
-1. This is the next step.
-
-1. This is yet another step, the third.
-
-
-Para criar listas de itens, comece uma linha com * ou - ou +, mas não misture os formatos em uma mesma lista. (Não misture formatos de marcadores, como * e +, dentro do mesmo documento.)
-
-* First item in an unordered list.
-* Another item.
-* Here we go again.
-
-FONTE:
-
-https://experienceleague.adobe.com/pt-br/docs/contributor/contributor-guide/writing-essentials/markdown#
 
 ## - Como inserir um link no Markdow?
 
-Links
-Existem duas formas de inserir link em Markdown, através de um link direto ou usando um texto-âncora:
 
-Texto-âncora: utilize os caracteres [ ] e ( ), adicionando entre chaves o texto que você quer que apareça, e entre os parênteses, o endereço de destino, no formato [PHET](https://phet.colorado.edu/pt_BR/simulations/browse).
-
-Link direto: envolva o endereço da web em chaves <>. O endereço ficará visível e será clicável pelo usuário. O endereço em forma de link direto tem o formato <https://phet.colorado.edu/pt_BR/simulations/browse>. 
 
 ## - Como fazer uma lista no Markdow?
 
-Nesta etapas veremos um dos recursos do markdown estendido: como criar listas de tarefas, listas de verificação ou listas de tarefas pendentes."
-
-Markdown é uma excelente linguagem de marcação para escrever documentos bem formatados e mínimos. O Markdown em si é uma linguagem de marcação leve desenvolvida por John Gruber e Aaron Swartz em 2004. Ele permite que você inclua marcação de formatação em texto simples e os processe em documentos HTML renderizados.
-O Markdown é amplamente adotado em muitas áreas, incluindo geradores de sites estáticos, documentação de código, etc.
 
 
-Lista de tarefas/caixa de seleção
-
-Uma lista de tarefas ou caixa de seleção é uma formatação simples que permite que você crie uma lista de itens e inclua uma caixa de seleção. Você pode marcar esse valor como marcado ou desmarcado, dependendo do status do alvo.
-
-Podemos criar caixas de seleção em markdown usando um traço, um espaço e um colchete. Tenha em mente que esse é um recurso estendido e dependerá do aplicativo Markdown.
-
-
-A sintaxe abaixo mostra como criar uma caixa de seleção desmarcada no Markdown:
-
-- []
-Por exemplo:
-
-- [ ] Oracle
-- [ ] MySQL
-- [ ] Microsoft SQL Server
-- [ ] PostgreSQL
-- [ ] Redis
-- [ ] Elasticsearch
-- [ ] SQLite
-- [ ] MariaDB
-- [ ] Solr
-- [ ] Neo4j
-- [ ] HBase
-- [ ] Couchbase
-
-O Markdown deve renderizar a saída conforme mostrado acima.
-
-
-Você também pode criar uma caixa de seleção adicionando um x ao par de colchetes. A sintaxe é como mostrada:
-
-- [x]
-Por exemplo:
-
-- [ ] Oracle
-- [x] MySQL
-- [x] Microsoft SQL Server
-- [x] PostgreSQL
-- [ ] Redis
-- [ ] Elasticsearch
-- [x] SQLite
-- [x] MariaDB
-- [ ] Solr
-- [ ] Neo4j
-- [ ] HBase
-- [x] Couchbase
-
-O código markdown deve retornar uma saída renderizada conforme mostrado acima.
-
-
-E com isso, você tem uma maneira de criar caixas de seleção, listas de verificação ou listas de tarefas em Markdown.
-
-Conclusão
-
-Nesta etapa, exploramos como criar caixas de seleção no Markdown usando a sintaxe de hífen, espaço e colchetes.
-
-FONTE:
-
-https://linuxhint-com.translate.goog/markdown-checkbox/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=sc
 
 
 ## - Como fazer uma tabela no Markdown?
 
-Você pode criar tabelas com pipes | e hífens -. Hifens: são usados para criar o cabeçalho de cada coluna, enquanto as barras verticais separam cada coluna. Você deve incluir uma linha em branco antes da tabela para ela ser construída corretamente.
 
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-TABELA 
-
-Captura de tela de uma tabela Markdown com duas colunas de largura igual, conforme renderizada no GitHub. Os cabeçalhos são renderizados em negrito e as linhas de conteúdo alternativo têm sombreamento cinza.
-
-As barras verticais em cada extremo da tabela são opcionais.
-
-As células podem ter largura variada **e não precisam estar alinhadas perfeitamente com as colunas**. Deve ter no mínimo três hifens em cada coluna da linha do cabeçalho.
-
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
-
-Captura de tela de uma tabela Markdown com duas colunas de largura diferente, conforme renderizada no GitHub. As linhas listam os comandos "git status" e "git diff" e as respectivas descrições.
-
-Se você estiver editando tabelas e snippets de código com frequência, poderá se beneficiar da habilitação de uma fonte de largura fixa em todos os campos de comentário no GitHub. Para obter mais informações, confira "Sobre gravação e formatação no GitHub".
 
 ## - Como adicionar imagens e mídia no Markdon?
 
-Comandos:  (interno a < > colocamos: img src = "logo") ou utilizamos o comando "Ponto de exclamação!, colchetes [figura 1 ] e (imagem)". 
+ 
 
-Adicionando imagens
 
-Para adicionar uma imagem a um documento, adicione seu arquivo de imagem à pasta do documento (neste exemplo nosso, esta na pasta rel01) e, em seguida, faça referência à imagem no arquivo index.md do documento usando os símbolos < > e internamente aos símbolos use: img src = ufsj.png. Ou a sintaxe Markdown equivalente (Ou seja, existem outras formas de inserir imagens no Markdown). 
-
-Veja o exemplo a seguir:
 
 ![Figura 1](ufsj.png)

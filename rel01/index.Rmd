@@ -1,7 +1,7 @@
 ---
-title: "Relatório 02 - Estatística Descritiva"
+title: "Relatório 01 - Markdown e Latex"
 author: "Leonardo Lois Rodrigues"
-date: "13/09/2024"
+date: "06/09/2024"
 header-includes:
   - \usepackage{titling}
   - \pretitle{\begin{center}
@@ -26,31 +26,14 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
---- 
-# - Apresentação do relatório
 
-Estatística Descritiva.
+# - Objetivo:
 
-# - Objetivo
+Descrever sobre Markdon e Latex.
 
-Descrever sobre Estatística Descritiva.
+# - Markdown:
 
-Diante do objetivo do relatório, apresentaremos nas próximas subseções os pontos a serem discutidos.
-
-- Coleta, organização e tabulação de dados;
-
-- Gráficos;
-
-- Medidas de posição;
-
-- Medidas de dispersão
-
-- Breve Conclusão.
-
-
-# - Estatística Descritiva:
-
-## - O que é o Markdownn?
+## - O que é o Markdown?
  
 Markdown Syntax é uma sintaxe usada para padronizar e facilitar formatação de texto na web, utilizada em aplicativos como Slack e GitHub. Textos estilizados com Markdown são, na maioria dos casos, apenas texto com caracteres não-alfabéticos, como #, \* e ![](), usados para a configuração de títulos, listas, itálico, negrito e inserção de imagens.
  
@@ -123,7 +106,7 @@ Texto-âncora: utilize os caracteres [ ] e ( ), adicionando entre chaves o texto
 
 Link direto: envolva o endereço da web em chaves <>. O endereço ficará visível e será clicável pelo usuário. O endereço em forma de link direto tem o formato <https://phet.colorado.edu/pt_BR/simulations/browse>. 
 
-## - Como fazer uma lista no Markdow?
+## - Como fazer uma lista no Markdown?
 
 Nesta etapas veremos um dos recursos do markdown estendido: como criar listas de tarefas, listas de verificação ou listas de tarefas pendentes."
 
@@ -218,7 +201,7 @@ Captura de tela de uma tabela Markdown com duas colunas de largura diferente, co
 
 Se você estiver editando tabelas e snippets de código com frequência, poderá se beneficiar da habilitação de uma fonte de largura fixa em todos os campos de comentário no GitHub. Para obter mais informações, confira "Sobre gravação e formatação no GitHub".
 
-## - Como adicionar imagens e mídia no Markdon?
+## - Como adicionar imagens e mídia no Markdown?
 
 Comandos:  (interno a < > colocamos: img src = "logo") ou utilizamos o comando "Ponto de exclamação!, colchetes [figura 1 ] e (imagem)". 
 
