@@ -47,7 +47,7 @@ Diante do objetivo do relatório, apresentaremos nas próximas subseções os po
 
 ## - Definição de Estatística:
 
-    Nesse enfoque, temos a Estatística como Ciência que fornece métodos para coleta, organização,
+Nesse enfoque, temos a Estatística como Ciência que fornece métodos para coleta, organização,
 descrição, análise e interpretação de dados (observacionais ou experimentais) e para a utilização dos
 mesmos na tomada de decisões. Os dados são informações retiradas de um conjunto de elementos
 de interesse. Podemos estar interessados na Produção anual de Gás Natural não associado com o
@@ -195,4 +195,3 @@ O resultado do estudo estatístico é apresentado na tabela abaixo:
 
 
 
-![Figura 1](ufsj.png)
