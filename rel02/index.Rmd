@@ -34,6 +34,8 @@ Descrever sobre Estatística Descritiva.
 
 Diante do objetivo do relatório, apresentaremos nas próximas subseções os pontos a serem discutidos.
 
+- Definição de Estatística;
+
 - Coleta, organização e tabulação de dados;
 
 - Gráficos;
@@ -43,23 +45,143 @@ Diante do objetivo do relatório, apresentaremos nas próximas subseções os po
 - Breve Conclusão.
 
 
-# - Markdownn
+## - Definição de Estatística:
 
-![Figura 7](latex5.png)
+    Nesse enfoque, temos a Estatística como Ciência que fornece métodos para coleta, organização,
+descrição, análise e interpretação de dados (observacionais ou experimentais) e para a utilização dos
+mesmos na tomada de decisões. Os dados são informações retiradas de um conjunto de elementos
+de interesse. Podemos estar interessados na Produção anual de Gás Natural não associado com o
+petróleo (GASN) de um determinado país, e ao longo dos anos, coletarmos informações para ao
+final, por exemplo, termos informações que nos indique o potencial energético desse recurso natural
+em um local ou consequências dessa fonte energética na economia do país, por exemplo.
+Assim, por meio da utilização de técnicas estatísticas, tentamos entender as informações contidas
+nos dados. 
 
-## - O que é o Markdownn?
+Já se perguntou como é que lojas virtuais lhe ofertam produtos sendo que nunca acessou aquele site antes? Já percebeu que a Netflix quando lhe oferece uma série a tela de entrada, às vezes, se altera? Tudo isso é fruto das técnicas de máquinas de aprendizagem (do inglês, Machine Learning), uma área da inteligência artificial.
 
-## - Como usar o Markdown para escrever uma documentação técnica?
+Inicialmente, podemos dividir a Estatística em três ramos:
+
+• Estatística Descritiva;
+
+• Probabilidade;
+
+• Estatística Inferencial.
+
+Neste relatório 02, iremos dircursar sobre a Estatística Descritiva.
+
+
+## - Estatística Descritiva
+
+Um conjunto de técnicas estatísticas destinadas a coleta, descrição e sintetização dos dados, a
+fim de podermos entender características de interesse da população é chamada de Estatística Descritiva ou Estatística Dedutiva.
+
+## - População
+
+O conjunto finito ou infinito de todos os elementos com pelo menos uma característica comum, dos quais é de interesse para a pesquisa, denominamos de População. O número de elementos é denominado tamanho da população, denotado por N.
+
+## - Amostra
+
+Um subconjunto de elementos da população é denominado amostra. O número de elementos
+da amostra é chamado de tamanho da amostra, sendo denotado por “n”.
+
+## - Variável
+
+A característica pela qual desejamos que a população seja descrita é denominada de variável.
+
+A variável pode assumir diferentes valores de elemento para elemento, chamado de dado ou
+valor observado, como foi apresentado na definição acima. A notação usual para a variável é X, Y, Z,
+ou Xi, Yi, Zi para um particular elemento amostral, em que i = 1, 2, . . ., n. 
+
+# - Coleta, organização e apresentação dos dados.
+
+Após selecionado a população de interesse, definindo os elementos que a compõe, bem como as
+variáveis que serão estudadas, fazemos o processo de coleta dos dados. Os dados são os valores assumidos de uma variável em um determinado elemento da população, que pode está sendo
+estudado por meio de uma amostra ou coletado diretamente da população. Neste último caso, a
+pesquisa realizada é um Censo.
+Ao termos um primeiro contato com os dados, percebemos que algumas informações prévias
+podem não ser facilmente obtidas, devido a desorganização dessas observações, Isso ocorre principalmente quando temos um grande número de dados.
+
+Dados brutos
+
+
+Os dados coletados numa forma sem ordenação e sem nenhum tipo de arranjo sistemático
+são chamados dados brutos.
+
+Os dados da Tabela 1, retirado de Montgomery e Runger (2016, p. 188), representam o número
+de erros em um conjunto de caracteres (strings) de 1.000 bits, que foram monitorados por um canal
+de comunicação. No total, foram coletados dados de 20 conjuntos de caracteres.
+
+Tabela 1: Dados brutos sobre o número de erros encontrados em 20 conjuntos de caracteres monitorado em um canal de comunicação.
+Os dados coletados numa forma sem ordenação e sem nenhum tipo de arranjo sistemático
+são chamados dados brutos.
+
+![Figura 1](tabela1.png)
+
+Podemos observar pela Tabela 1, que estes representam um tipo de dados brutos, pois não há
+qualquer ordenamento sobre os seus valores, e que a interpretação desses dados poderá se complicar à medida que o tamanho da amostra aumenta. Quando ordenamos os dados brutos podemos
+obter algumas informações mais facilmente, como por exemplo, valores mínimos e máximos desses
+conjunto de dados.
+
+Os dados brutos, ordenados de modo crescente ou decrescente alfanumericamente, são chamados de dados em rol ou elaborados.
+
+![Figura 2](tabela2.png)
+
+Dados elaborados sobre o número de erros encontrados em 20 conjunto de caracteres
+monitorado em um canal de comunicação.
+
+Facilita a percepção de algumas informações, porém ainda limitado, uma vez que a quantidade
+de valores pode ser simplicada, sem perda de informações, por meio de tabulações agrupadas em
+distribuição de frequências. Além de simplificar, podemos obter mais informações do que se estes
+dados tivessem expressos sem tabulação, do qual, trataremos na próxima seção.
+
+Na figura 3, apresentamos a distribuição de frequências do número de erros encontrados em 20 conjunto de caracteres monitorado em um canal de comunicação.
+
+![Figura 3](tabela3.png)
+
+Em resumo, podemos dizer que o algoritmo para criar um agrupamento de dados
+em intervalo de classes pode ser dados em sete passos:
+1) Calcular k,
+
+2) Calcular At,
+
+3) Calcular c,
+
+4) Calcular Li1a,
+
+5) Determinar as classes,
+
+6) Calcular o ponto médio e
+
+7) Calcular as frequências como apresentadas no início dessa seção.
+
+Abaixo seintetizamos estas informações em um exemplo:
+
+Os dados representam a temperatura (ºF) do anel de vedação de cada teste de acionamento ou
+lançamento real do motor do foguete Challenger, isso porque, em 1986, houve nos Estados Unidos
+um dos maiores acidentes com ônibus espaciais, vitimando em 8 astronautas que estavam na
+tripulação. Foram realizados diversos estudos pela NASA para identificar as causas da falha. A
+primeira atenção se voltou para a temperatura do anel de vedação, que é apresentado a seguir.
+
+| Dados brutos                         |
+| ------------------------------------ |
+| 84 49 61 40 83 67 45 66 70 69 80 58  |
+| 68 60 67 72 73 70 57 63 70 78 52 67  |
+| 53 67 75 61 70 81 76 79 75 76 58 31  |
+|   |
+
+O resultado do estudo estatístico é apresentado na tabela abaixo:
+
+![Figura 4](tabela4.png)
+
+
+# - Medidas de Posição
 
 
 ## - Como inserir um link no Markdow?
 
 
 
-## - Como fazer uma lista no Markdow?
-
-
-
+# - Medidas de dispersão
 
 
 ## - Como fazer uma tabela no Markdown?
