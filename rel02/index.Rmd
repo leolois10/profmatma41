@@ -175,10 +175,64 @@ O resultado do estudo estatístico é apresentado na tabela abaixo:
 
 
 # - Medidas de Posição
+Após tabularmos os dados ou apresentarmos graficamente, percebemos que ainda assim a quantidade de informações pode ser muito grande para descrevê-los. Desse modo, surgem algumas
+medidas que podem resumir tudo isso, de modo a preservar as principais características contidas
+nessas observações, são as denominadas medidas de posição ou tendência central, e as medidas
+de dispersão ou de variabilidade, que tem a propriedade de localizar a distribuição dos dados e
+também caracterizar sua variabilidade, respectivamente
 
 
-## - Como inserir um link no Markdow?
+## - Média
 
+Quando iniciamos uma conversa e percebemos que alguém está no meio termo em um determinado
+posicionamento, dizemos que a pessoa está fazendo “média”, vulgarmente, dizemos que está em
+cima do muro. Nesse mesmo raciocínio, é a média aritmética, uma medida em que o seu valor representa o valor central das observações. 
+
+Exemplo 1: 
+
+Considere um conjunto de dados (n = 17) fictícios que apresentam a maior e a menor observação
+como suspeitos de serem atípicos quanto as suas ocorrências:
+1, 5, 5, 6, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 10, 10, 40
+Para representar esse conjunto de dados, usamos a média aritmética para representá-los:
+M = (1 + 5 + . . . + 40)/17 = 9, 67 und.
+
+## - Mediana
+
+Uma outra alternativa para contornarmos os problemas de dados discrepantes encontrados na média aritmética, pode ser apresentada por meio da medida de posição chamada de mediana, do qual
+leva em consideração a posição ordenada dos dados ao invés de usar or próprios valores observados. Mas especificamente, o valor da mediana é o ponto central dos dados, em que abaixo desse
+valor, representa as 50% menores observação, ao passo que, os valores acima da mediana representam as 50% maiores observações. De outro modo, dizemos que a mediana representa um ponto
+central no conjunto de dados em que a quantidade de elementos abaixo ou acima desse valor, não
+supera 50%.
+
+Exemplo 2:
+Calculando a mediana do exemplo 1:
+
+Como n = 17 é ímpar, a mediana amostral desse conjunto de dados fictícios é dado pelo elemento central em ordem crescente dos elementos:
+
+Md = (17+1)/2 = 9 
+Portanto, a mediana é o elemento na posição 9 que é 8 unid.
+
+No caso de um conjunto com n par, devemos tomar os dois elementos centrais do conjunto, colocados novamente em ordem crescente e fazer a média aritmética dos mesmos.
+Por exemplo, no caso do exemplo 1, tiremos o elemento 40. Daí n = 16, par. Tomemos os elementos centrais, que são as posições 8º e 9º, respectivamentes 8 e 8 unidades, daí:
+
+Md = (8+8)/2 = 8 unid.
+
+## Moda
+
+
+As medidas de posição até agora apresentadas não foram aplicadas para as variáveis qualitativas
+de um modo geral, apenas a mediana para o caso de variável quantitativa ordinal. Contudo, podemos apresentar um medida mais simples, que seja possível ser aplicada para todas as naturezas de
+variáveis apresentadas, definida a seguir.
+
+Dessa forma, podemos perceber que um conjunto de dados poderá ter mais de uma moda, isto
+é, se observarmos dois valores mais frequentes e iguais, teremos uma distribuição bimodal, três
+valores mais frequentes iguais, teremos uma distribuição trimodal, mais de três, uma distribuição
+multimodal, ou até mesmo uma distribuição amodal, quando todos os valores se repetem apenas
+uma vez.
+
+Assim, novamente olhando para o exemplo 1, temos como moda do conjunto com 17 elementos o elemento 8 unid. que aparece mais vezes, 5 vezes.
+ 
+ 
 
 
 # - Medidas de dispersão
