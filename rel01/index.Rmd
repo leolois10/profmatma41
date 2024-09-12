@@ -371,7 +371,7 @@ https://pt.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Display_math_mode
 
 # - Conclusão:
 
-Apresentamos neste relatório, duas ferramentas poderosíssimas, para edição de textos. Que comportam imagens, links, figuras, tabelas, fórmulas matemáticas, ... Que acreditamos ser essenciais para serem utilizadas no seu texto científico. Mais informações, consulte as fontes indicadas no texto.
+Apresentamos neste relatório, duas ferramentas poderosíssimas, Markdown e Latex, para edição de textos. Que comportam imagens, links, figuras, tabelas, fórmulas matemáticas, ... Que acreditamos ser essenciais para serem utilizadas no seu texto científico. Mais informações, consulte as fontes indicadas no texto.
 
 
 

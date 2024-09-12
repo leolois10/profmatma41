@@ -28,7 +28,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 Estatística Descritiva.
 
-# - Objetivo
+# - Objetivo:
 
 Descrever sobre Estatística Descritiva.
 
@@ -45,7 +45,7 @@ Diante do objetivo do relatório, apresentaremos nas próximas subseções os po
 - Breve Conclusão.
 
 
-## - Definição de Estatística:
+## - Definição de Estatística
 
 Nesse enfoque, temos a Estatística como Ciência que fornece métodos para coleta, organização,
 descrição, análise e interpretação de dados (observacionais ou experimentais) e para a utilização dos
@@ -92,7 +92,7 @@ A variável pode assumir diferentes valores de elemento para elemento, chamado d
 valor observado, como foi apresentado na definição acima. A notação usual para a variável é X, Y, Z,
 ou Xi, Yi, Zi para um particular elemento amostral, em que i = 1, 2, . . ., n. 
 
-# - Coleta, organização e apresentação dos dados.
+# - Coleta, organização e apresentação dos dados:
 
 Após selecionado a população de interesse, definindo os elementos que a compõe, bem como as
 variáveis que serão estudadas, fazemos o processo de coleta dos dados. Os dados são os valores assumidos de uma variável em um determinado elemento da população, que pode está sendo
@@ -174,7 +174,8 @@ O resultado do estudo estatístico é apresentado na tabela abaixo:
 ![Figura 4](tabela4.png)
 
 
-# - Medidas de Posição
+# - Medidas de Posição:
+
 Após tabularmos os dados ou apresentarmos graficamente, percebemos que ainda assim a quantidade de informações pode ser muito grande para descrevê-los. Desse modo, surgem algumas
 medidas que podem resumir tudo isso, de modo a preservar as principais características contidas
 nessas observações, são as denominadas medidas de posição ou tendência central, e as medidas
@@ -217,7 +218,7 @@ Por exemplo, no caso do exemplo 1, tiremos o elemento 40. Daí n = 16, par. Tome
 
 Md = (8+8)/2 = 8 unid.
 
-## Moda
+## - Moda
 
 
 As medidas de posição até agora apresentadas não foram aplicadas para as variáveis qualitativas
@@ -232,18 +233,105 @@ uma vez.
 
 Assim, novamente olhando para o exemplo 1, temos como moda do conjunto com 17 elementos o elemento 8 unid. que aparece mais vezes, 5 vezes.
  
+
+# - Medidas de dispersão:
+
+
+## - Amplitude
+
+ Amplitude em uma população
+Seja uma população X1, X2, . . . , XN, de tamanho N, e em ordem crescente de magnitude temos X(1) = min (Xi), X(2), . . . , X(N) = maxi (Xi), para i = 1, 2, . . ., N. Então a amplitude de uma população, denotada por Ap, é definida por:
  
+Ap = X(N) − X(1)
 
 
-# - Medidas de dispersão
+Algumas características sobre a amplitude:
+• o resultado da amplitude é dado na mesma unidade da variável em estudo;
+
+• uma medida de dispersão facilmente calculada;
+
+• limitada apenas as variáveis quantitativas;
+
+• essa medida é muito utilizada em comparações múltiplas, cartas de controle em estatística de
+qualidade, dentre outras áreas;
+
+• a amplitude pode ser utilizada como medida de dispersão para comparar a variabilidade de
+dados de dois ou mais grupos diferentes;
+
+• a amplitude é sensível a dados discrepantes;
+
+• a amplitude é limitada por levar em consideração apenas os valores extremos, e nada sobre as
+demais observações. Nesse caso, podem ocorrer situações em que poderíamos erroneamente concluir que os grupos distintos de dados, são iguais, uma vez que apresentam amplitude e média aritmética iguais;
 
 
-## - Como fazer uma tabela no Markdown?
+## - Variância
+
+Vamos medir aqui, o quanto os elementos estão dispersos da média.
+
+Essa medida apresenta
+uma informação interessante que é penalizar as observações quanto mais estiver distante do
+valor central. Observe que quando elevamos ao quadrado um alto desvio, esse valor se torna maior
+ainda, mas quando elevamos ao quadrado um desvio pequeno, esse valor não cresce tanto. Assim,
+conseguimos compreender quais os dados que estão mais dispersos em torno da média.
+Baseado nessas informações, surge a variância populacional que é a média da soma de quadrados, denotada por σ², definida a seguir.
+
+![Figura 5](Var1.png)
 
 
+Seja uma população X1, X2, . . ., XN, de tamanho N, com parâmetro conhecido
+então a variância populacional, denotada por σ², é definida por:
 
+![Figura 6](Var2.png)
 
-## - Como adicionar imagens e mídia no Markdon?
+Algumas características da variância:
+• a unidade da variância está na escala ao quadrado da unidade da variável;
+
+• limitada apenas as variáveis quantitativas;
+
+• Diferente da amplitude, envolve todos os dados da população ou amostra;
+
+• a variância é sempre uma medida positiva, exceto quando todos os valores são iguais que
+resultam em uma variância nula;
+
+• quanto mais próximo de zero a variância for, mas concentrado os dados estão em torno da
+média, ao passo que, à medida que a variância se distancia de zero, mas disperso os dados
+estão em torno da média;
+
+• devido as suas propriedades matemáticas, algumas mencionadas anteriormente, bem como a
+quantidade de técnicas estatísticas que empregam essa medida, a torna como a mais conhecida
+dentre as medidas de dispersão;
+
+• uma vez que a média é sensível aos dados, a variância também é sensível, uma vez que esta
+depende da média.
+
+## - Desvio padrão
+
+A variância apesar de ter resolvido alguns dos problemas mencionados anteriormente, para uma
+medida de dispersão, apresenta sua unidade ao quadrado da unidade da variável em estudo, isso
+significa que se tivermos usando uma variável na escala de metros, a dispersão dada pela variância
+estará na escala de área, isto é, em metros ao quadrado. Isso se torna difícil a percepção de dispersão
+quando observamos os dados. Dessa forma, surge a medida do desvio padrão, definida a seguir.
+
+![Figura 7](DP1.png)
+
+Com o desvio padrão, podemos verificar a medida de variabilidade na mesma unidade da variável.
+
+Algumas características do desvio padrão, que segue:
+
+• a unidade do desvio padrão está na mesma escala da unidade da variável em estudo;
+• limitada apenas as variáveis quantitativas;
+• uma vez que a média é sensível aos dados, o desvio padrão também é sensível, uma vez que
+esta depende da média;
+• embora a variância amostral, S² seja um estimador não viesado para a variância populacional
+σ², o desvio padrão amostral S, que é derivado de S², é um estimador viesado do desvio
+padrão populacional σ;
+
+• assim como a variância, o desvio padrão é sempre uma medida positiva, exceto quando todos
+os valores são iguais que resultam em uma variância nula;
+
+• assim como na variância, quanto mais próximo de zero o desvio padrão for, mas concentrado
+os dados estão em torno da média, ao passo que, à medida que o desvio padrão se distancia
+de zero, mas disperso os dados estão em torno da média.
 
  
 
