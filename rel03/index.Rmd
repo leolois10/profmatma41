@@ -33,11 +33,11 @@ Descrever sobre teoria de conjuntos, exemplos e aplicações.
 
 Diante do objetivo do relatório, apresentaremos nas próximas subseções os pontos a serem discutidos:
 
-- Experimento Aleatório;
+- Experimento aleatório;
 
 - Conjunto;
 
-- Espaço Amostral;
+- Espaço amostral;
 
 - Evento;
 
@@ -151,6 +151,7 @@ As seguintes operações são definidas:
 
 # - Probabilidade:
 
+EM CONSTRUÇÃO
 
 # - Referências Bibliográficas:
 
