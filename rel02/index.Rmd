@@ -332,6 +332,11 @@ os valores são iguais que resultam em uma variância nula;
 os dados estão em torno da média, ao passo que, à medida que o desvio padrão se distancia
 de zero, mas disperso os dados estão em torno da média.
 
+FONTE:
+
+<https://bendeivide.github.io/book-epaec/>
+
+
  
 
 

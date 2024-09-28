@@ -95,7 +95,7 @@ Para criar listas de itens, comece uma linha com * ou - ou +, mas não misture o
 
 FONTE:
 
-https://experienceleague.adobe.com/pt-br/docs/contributor/contributor-guide/writing-essentials/markdown#
+<https://experienceleague.adobe.com/pt-br/docs/contributor/contributor-guide/writing-essentials/markdown#>
 
 ## - Como inserir um link no Markdow?
 
@@ -228,7 +228,7 @@ Na verdade, LaTeX representa uma balança entre a funcionalidade e a facilidade 
 
 FONTE:
 
-https://www.inf.ufsc.br/~j.barreto/cca/tratexto/latex.htm
+<https://www.inf.ufsc.br/~j.barreto/cca/tratexto/latex.htm>
 
 Para escrever o texto em Latex, você pode instalar o TexStudio no seu computador e usar esta versão até off line ou utilizar a versão on line do Latex, chamada Overleaf. Onde tudo é feito on line e de forma gratuita, sem precisar instalar qualquer programa. Aqui neste relatório vamos explorar o modo Overleaf, que não é muito distinta do Tex Studio.
 
@@ -366,7 +366,7 @@ Este exemplo produz a seguinte saída:
 
 FONTE:
 
-https://pt.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Display_math_mode
+<https://pt.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Display_math_mode>
 
 
 # - Conclusão:
