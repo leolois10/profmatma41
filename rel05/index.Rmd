@@ -1,0 +1,181 @@
+---
+title: "Relatório 05 - Teorema do Limite Central - TLC"
+author: "Leonardo Lois Rodrigues"
+date: "25/10/2024"
+header-includes:
+  - \usepackage{titling}
+  - \pretitle{\begin{center}
+    \includegraphics[width=2in,height=2in]{ufsj.png}\LARGE\\}
+  - \posttitle{\end{center}}
+toc-title: "Sumário"
+output:
+  
+  bookdown::html_document2: 
+    theme: journal
+    highlight: tango
+    toc: yes
+    number_sections: yes
+    includes:
+      in_header: logo.html
+  pdf_document:
+    
+    toc: yes
+    number_sections: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# - Objetivo:
+
+- Demonstrar o TLC;
+
+- E mostrar por meio de um exemplo, a Distribuição de Poisson se aproximando da distribuição NOrmal. (Uma simulação com 10.000 amostras, de tamanho de amostras distintos, gerando seus respectivos gráficos. Mostrando assim por meio deste relatório como uma distribuição de Poisson, pode ser convertida em uma distribuição Normal, confirmando o TLC).
+
+
+# - Teorema do Limite Central - TLC
+
+## -  Demonstração:
+
+
+
+\title{Prova do Teorema do Limite Central usando a Função Geradora de Momentos}
+\author{}
+\date{}
+\maketitle
+
+\section*{Teorema do Limite Central}
+
+Sejam \( X_1, X_2, \dots, X_n \) variáveis aleatórias independentes e identicamente distribuídas (i.i.d.) com esperança \( \mu = \mathbb{E}(X_i) \) e variância \( \sigma^2 = \text{Var}(X_i) \). Definimos a soma padronizada como
+
+\[
+S_n = \frac{1}{\sqrt{n}} \sum_{i=1}^n (X_i - \mu).
+\]
+
+Então, \( S_n \) converge em distribuição para uma variável aleatória \( N(0, 1) \), ou seja:
+
+\[
+\lim_{n \to \infty} P\left(S_n \leq x\right) = P\left(Z \leq x\right), \quad \text{onde} \ Z \sim N(0, 1).
+\]
+
+\section*{Prova}
+
+Vamos provar usando a função geradora de momentos e a expansão em série de Taylor.
+
+\subsection*{Função Geradora de Momentos}
+
+A função geradora de momentos \( M_X(t) \) de uma variável aleatória \( X \) é definida como:
+
+\[
+M_X(t) = \mathbb{E}\left[e^{tX}\right].
+\]
+
+Para a soma \( S_n \), a função geradora de momentos é dada por:
+
+\[
+M_{S_n}(t) = \mathbb{E}\left[e^{tS_n}\right].
+\]
+
+Como \( S_n \) é uma soma de variáveis i.i.d., podemos usar a propriedade de soma das funções geradoras de momentos:
+
+\[
+M_{S_n}(t) = \left[ M_{X_i - \mu}\left(\frac{t}{\sqrt{n}}\right) \right]^n.
+\]
+
+\subsection*{Expansão de Taylor da Função Geradora de Momentos}
+
+Agora, expandimos \( M_X(t) \) em série de Taylor em torno de \( t = 0 \):
+
+\[
+M_X(t) = 1 + \mu t + \frac{\sigma^2 t^2}{2} + O(t^3).
+\]
+
+Substituindo isso na expressão de \( M_{S_n}(t) \), temos:
+
+\[
+M_{S_n}(t) = \left( 1 + 0 \cdot \frac{t}{\sqrt{n}} + \frac{\sigma^2}{2} \left(\frac{t}{\sqrt{n}}\right)^2 + O\left(\frac{1}{n^{3/2}}\right) \right)^n.
+\]
+
+\subsection*{Limite Quando \( n \to \infty \)}
+
+Usando a expressão acima, reescrevemos \( M_{S_n}(t) \) para \( n \) grande:
+
+\[
+M_{S_n}(t) \approx \left( 1 + \frac{\sigma^2 t^2}{2n} \right)^n.
+\]
+
+Quando \( n \to \infty \), aplicamos o limite exponencial:
+
+\[
+\left( 1 + \frac{a}{n} \right)^n \to e^a.
+\]
+
+Assim, temos:
+
+\[
+M_{S_n}(t) \to e^{\frac{\sigma^2 t^2}{2}}.
+\]
+
+Essa é a função geradora de momentos de uma variável normal \( N(0, \sigma^2) \).
+
+\subsection*{Conclusão}
+
+Como a função geradora de momentos de \( S_n \) converge para a função geradora de momentos de uma variável normal \( N(0, \sigma^2) \), pelo Teorema da Continuidade de Lévy, a distribuição de \( S_n \) converge para \( N(0, \sigma^2) \). Portanto, ao padronizar \( S_n \) (dividindo por \( \sigma \)), obtemos a convergência para a distribuição normal padrão \( N(0, 1) \), o que completa a prova do Teorema do Limite Central.
+
+
+## - Exemplo: Distribuição de Poisson
+
+
+Fizemos uma simulação com 10.000 amostras, o tamanho das amostras foram 01,   05,  50 e 5000, respectivamente.
+
+Melhorar o texto abaixo:
+
+(Essas 10.000 amostras são os 10.000 elementos do meu conjunto, minha matriz, os tamanhos são as quantidades de elementos, por linha, as amostras de cada subconjunto, tamanho 01 gera o próprio conjunto, o gráfico não modifica, fica o próprio gráfico Poisson, a medida que aumentamos o tamanho das amostras 05, 50, 5000, ... o gráfio se aproxima de sua distribuição normal, cumprindo assim o TLC).
+
+Utilizamos o seguinte código: (Logo abaixo iremos apresentar o resultado deste código, que são os gráficos da nossa simulação)
+
+
+```{r eval=FALSE, warning=TRUE}
+#simulação eficiente
+par(mfrow = c(2,2))
+for(n in c(1, 5, 50, 5000)){
+   # matrix (k, n)
+  k <- 10000
+  set.seed(10) # semente de simulação
+  x <- rpois(n, lambda = 20.5)
+  mat <- matrix(x, k, n)
+   #calcular as médias
+  xbar <- apply(mat, 1, mean)
+ # hist
+  hist(xbar, main = paste0("n = ", n))
+}
+```
+
+O código acima nos fornece os 4 gráficos da nossa simulação, com 10.000 amostras,  de tamanhos 01, 05, 50 e 5000, respectivamente.
+
+```{r echo=FALSE, warning=TRUE}
+#simulação eficiente
+par(mfrow = c(2,2))
+for(n in c(1, 5, 50, 5000)){
+   # matrix (k, n)
+  k <- 10000
+  set.seed(10) # semente de simulação
+  x <- rpois(n, lambda = 20.5)
+  mat <- matrix(x, k, n)
+   #calcular as médias
+  xbar <- apply(mat, 1, mean)
+ # hist
+  hist(xbar, main = paste0("n = ", n))
+}
+```
+
+# - Referências Bibliográficas:
+
+CHUNG, Kai Lai. A course in probability theory. Elsevier, 2000.
+
+
+
+

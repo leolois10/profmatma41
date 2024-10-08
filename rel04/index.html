@@ -342,16 +342,7 @@ display: none;
 <li><a href="#evento" id="toc-evento"><span class="toc-section-number">2.4</span> - Evento</a></li>
 <li><a href="#operações" id="toc-operações"><span class="toc-section-number">2.5</span> - Operações</a></li>
 </ul></li>
-<li><a href="#probabilidade" id="toc-probabilidade"><span class="toc-section-number">3</span> - Probabilidade:</a>
-<ul>
-<li><a href="#definição" id="toc-definição"><span class="toc-section-number">3.1</span> - Definição</a></li>
-<li><a href="#probabilidade-condicional" id="toc-probabilidade-condicional"><span class="toc-section-number">3.2</span> - Probabilidade condicional</a></li>
-<li><a href="#teorema-de-bayes" id="toc-teorema-de-bayes"><span class="toc-section-number">3.3</span> - Teorema de Bayes</a>
-<ul>
-<li><a href="#teorema-da-probabilidade-total" id="toc-teorema-da-probabilidade-total"><span class="toc-section-number">3.3.1</span> - Teorema da probabilidade total</a></li>
-<li><a href="#o-teorema-de-bayes" id="toc-o-teorema-de-bayes"><span class="toc-section-number">3.3.2</span> - O teorema de Bayes</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#probabilidade" id="toc-probabilidade"><span class="toc-section-number">3</span> - Probabilidade:</a></li>
 <li><a href="#referências-bibliográficas" id="toc-referências-bibliográficas"><span class="toc-section-number">4</span> - Referências Bibliográficas:</a></li>
 </ul>
 </div>
@@ -457,99 +448,7 @@ As seguintes operações são definidas:</p>
 </div>
 <div id="probabilidade" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> - Probabilidade:</h1>
-<div id="definição" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> - Definição</h2>
-<p>É a função P que associa a cada evento de F um número real pertencente ao intervalo [O, 1], satisfazendo os axiomas:</p>
-<ol style="list-style-type: upper-roman">
-<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
-</ol>
-<ol start="2" style="list-style-type: upper-roman">
-<li><span class="math inline">\(P(A \cup B) = P(A) + P(B)\)</span>, se <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> forem mutuamente exclusivos.</li>
-</ol>
-<ol start="3" style="list-style-type: upper-roman">
-<li><span class="math inline">\(P\left( \bigcup_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i)\)</span>, se <span class="math inline">\(A_1, A_2, \dots, A_n\)</span> forem, dois a dois, eventos mutuamente exclusivos.</li>
-</ol>
-<p>Observamos pela definição que <span class="math inline">\(0 \leq P(A) \leq 1\)</span> para todo evento <span class="math inline">\(A\)</span>, <span class="math inline">\(A \subseteq \Omega\)</span>.</p>
-<p>Apartir daqui vamos dar enfase aos exemplos:</p>
-</div>
-<div id="probabilidade-condicional" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> - Probabilidade condicional</h2>
-<p>Introduziremos a noção de probabilidade condicional através do seguinte exemplo:</p>
-<p>Exemplo 1</p>
-<p>Consideremos 250 alunos que cursam o primeiro ciclo de uma faculdade. Destes
-alunos, 100 são homens (H) e 150 são mulheres (1\1); 11 O cursam física (F) e 140 cursam quí1nica (Q). A distribuição dos alunos é a seguinte:</p>
-<p> Um aluno é sorteado ao acaso. Qual a probabilidade de que esteja cursando química, dado que é mulher?</p>
-<p>Pelo quadro, vemos que essa probabilidade é de <span class="math inline">\(\frac{80}{150}\)</span> e representamos:</p>
-<p><span class="math display">\[
-P(Q / M) = \frac{80}{150} \quad \text{(probabilidade de que o aluno curse química, condicionado ao fato de ser mulher).}
-\]</span></p>
-<p>Observamos, porém, que <span class="math inline">\(P(M \cap Q) = \frac{80}{250}\)</span> e <span class="math inline">\(P(M) = \frac{150}{250}\)</span>. Para obtermos o resultado do problema, basta considerar que:</p>
-<p><span class="math display">\[
-P(Q / M) = \frac{80}{150} = \frac{250}{150} \cdot \frac{80}{250}
-\]</span></p>
-<p>Logo:</p>
-<p><span class="math display">\[
-P(Q / M) = \frac{P(M \cap Q)}{P(M)}
-\]</span></p>
-<p>Sejam <span class="math inline">\(A \subseteq \Omega\)</span> e <span class="math inline">\(B \subseteq \Omega\)</span>. Definimos a <span class="math inline">\((A / B)\)</span> como segue:</p>
-<p><span class="math display">\[
-P(A / B) = \frac{P(A \cap B)}{P(B)}, \quad \text{se } P(B) \neq 0
-\]</span></p>
-<p>Também:</p>
-<p><span class="math display">\[
-P(B / A) = \frac{P(B \cap A)}{P(A)}, \quad \text{se } P(A) \neq 0
-\]</span></p>
-</div>
-<div id="teorema-de-bayes" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> - Teorema de Bayes</h2>
-<div id="teorema-da-probabilidade-total" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> - Teorema da probabilidade total</h3>
-<p>Sejam <span class="math inline">\(A_1, A_2, \dots, A_n\)</span> eventos que formam uma partição do espaço amostral. Seja <span class="math inline">\(B\)</span> um evento desse espaço. Então, temos:</p>
-<p><span class="math display">\[
-P(B) = \sum_{i=1}^{n} P(A_i) \cdot P(B \mid A_i)
-\]</span></p>
-<p>Exemplo 2</p>
-<p>Uma urna contém 3 bolas brancas e 2 amarelas. Uma segunda urna contém 4 bolas brancas e 2 amarelas. Escolhe-se, ao acaso, uma urna e dela retira-se, também ao acaso, uma bola. Qual a probabilidade de que seja branca?</p>
-<p>Resolução:</p>
-<p>A bola branca pode ocorrer: $ B = (B | I) (B | II) $</p>
-<p>P(B) = P(B | I) + P(B | II)</p>
-<p><span class="math display">\[
-P(B) = P(I) \cdot P(B | I) + P(II) \cdot P(B | II)
-\]</span></p>
-<p>Calculando,</p>
-<p><span class="math display">\[
-P(B | I) = \frac{3}{5}, \quad P(B | II) = \frac{4}{6}
-\]</span></p>
-<p>Portanto,</p>
-<p><span class="math display">\[
-P(B) = \frac{1}{2} \cdot \frac{3}{5} + \frac{1}{2} \cdot \frac{4}{6}
-\]</span></p>
-<p>Sejam A_1, A_2, , A_n eventos que formam uma partição do espaço. Seja B um evento. Sejam conhecidas P(A_i) e P(B | A_i) , para i = 1, 2, , n . Então:</p>
-<p><span class="math display">\[
-P(A_i | B) = \frac{P(A_i) \cdot P(B | A_i)}{\sum_{j=1}^{n} P(A_j) \cdot P(B | A_j)}.
-\]</span></p>
-</div>
-<div id="o-teorema-de-bayes" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> - O teorema de Bayes</h3>
-<p>É também chamado de teorema da probabilidade a posteriori. Ele relaciona uma das parcelas da probabilidade total com a própria probabilidade total.</p>
-<p>Exemplo 3</p>
-<p>A urna A contém 3 fichas vermelhas e 2 azuis, e a urna B contém 2 vermelhas e 8 azuis. Joga-se uma moeda “honesta”. Se a moeda der cara, extrai-se uma ficha da urna A; se der coroa, extrai-se uma ficha da urna B. Uma ficha vermelha é extraída. Qual a probabilidade de ter saído cara no lançamento?</p>
-<p>Resolução:</p>
-<p>Queremos: P(C | V)</p>
-<p>Utilizando a fórmula da probabilidade total:</p>
-<p><span class="math display">\[
-P(V) = P(C) \cdot P(V | C) + P(K) \cdot P(V | K).
-\]</span></p>
-<p>Calculando,</p>
-<p><span class="math display">\[
-P(V) = \frac{1}{2} \cdot \frac{3}{5} + \frac{1}{2} \cdot \frac{2}{10} = \frac{3}{10} + \frac{1}{10} = \frac{4}{10}.
-\]</span></p>
-<p>Agora, calculamos P(C | V) :</p>
-<p><span class="math display">\[
-P(C | V) = \frac{P(V | C) \cdot P(C)}{P(V)}.
-\]</span></p>
-</div>
-</div>
+<p>EM CONSTRUÇÃO</p>
 </div>
 <div id="referências-bibliográficas" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> - Referências Bibliográficas:</h1>

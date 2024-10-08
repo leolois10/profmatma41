@@ -151,7 +151,152 @@ As seguintes operações são definidas:
 
 # - Probabilidade:
 
-EM CONSTRUÇÃO
+## - Definição
+
+É a função P que associa a cada evento de F um número real pertencente ao intervalo [O, 1], satisfazendo os axiomas:
+
+I) \( P(\Omega) = 1 \)
+
+\vspace{0.3cm}
+
+II) \( P(A \cup B) = P(A) + P(B) \), se \( A \) e \( B \) forem mutuamente exclusivos.
+
+\vspace{0.3cm}
+
+III) \( P\left( \bigcup_{i=1}^{n} A_i \right) = \sum_{i=1}^{n} P(A_i) \), se \( A_1, A_2, \dots, A_n \) forem, dois a dois, eventos mutuamente exclusivos.
+
+\vspace{0.3cm}
+
+Observamos pela definição que \( 0 \leq P(A) \leq 1 \) para todo evento \( A \), \( A \subseteq \Omega \).
+
+
+
+Apartir daqui vamos dar enfase aos exemplos:
+
+## - Probabilidade condicional 
+
+Introduziremos a noção de probabilidade condicional através do seguinte exemplo: 
+
+Exemplo 1
+
+Consideremos 250 alunos que cursam o primeiro ciclo de uma faculdade. Destes 
+alunos, 100 são homens (H) e 150 são mulheres (1\1); 11 O cursam física (F) e 140 cursam quí1nica (Q). A distribuição dos alunos é a seguinte: 
+
+\textbf{Pergunta:} Um aluno é sorteado ao acaso. Qual a probabilidade de que esteja cursando química, dado que é mulher?
+
+\vspace{0.5cm}
+
+Pelo quadro, vemos que essa probabilidade é de \( \frac{80}{150} \) e representamos:
+
+\[
+P(Q / M) = \frac{80}{150} \quad \text{(probabilidade de que o aluno curse química, condicionado ao fato de ser mulher).}
+\]
+
+Observamos, porém, que \( P(M \cap Q) = \frac{80}{250} \) e \( P(M) = \frac{150}{250} \). Para obtermos o resultado do problema, basta considerar que:
+
+\[
+P(Q / M) = \frac{80}{150} = \frac{250}{150} \cdot \frac{80}{250}
+\]
+
+Logo:
+
+\[
+P(Q / M) = \frac{P(M \cap Q)}{P(M)}
+\]
+
+Sejam \( A \subseteq \Omega \) e \( B \subseteq \Omega \). Definimos a \textbf{probabilidade condicional de \( A \), dado que \( B \) ocorre} \( (A / B) \) como segue:
+
+\[
+P(A / B) = \frac{P(A \cap B)}{P(B)}, \quad \text{se } P(B) \neq 0
+\]
+
+Também:
+
+\[
+P(B / A) = \frac{P(B \cap A)}{P(A)}, \quad \text{se } P(A) \neq 0
+\]
+
+## - Teorema de Bayes 
+
+### - Teorema da probabilidade total 
+
+Sejam \( A_1, A_2, \dots, A_n \) eventos que formam uma partição do espaço amostral. Seja \( B \) um evento desse espaço. Então, temos:
+
+\[
+P(B) = \sum_{i=1}^{n} P(A_i) \cdot P(B \mid A_i)
+\]
+
+
+Exemplo 2
+
+Uma urna contém 3 bolas brancas e 2 amarelas. Uma segunda urna contém 4 bolas brancas e 2 amarelas. Escolhe-se, ao acaso, uma urna e dela retira-se, também ao acaso, uma bola. Qual a probabilidade de que seja branca?
+
+Resolução:
+
+A bola branca pode ocorrer: $ B = (B | I) \cup (B | II) $
+
+
+P(B) = P(B | I) + P(B | II)
+
+
+$$
+P(B) = P(I) \cdot P(B | I) + P(II) \cdot P(B | II)
+$$
+
+Calculando,
+
+$$
+P(B | I) = \frac{3}{5}, \quad P(B | II) = \frac{4}{6}
+$$
+
+Portanto,
+
+$$
+P(B) = \frac{1}{2} \cdot \frac{3}{5} + \frac{1}{2} \cdot \frac{4}{6}
+$$
+
+\section{Teorema de Bayes}
+Sejam  A_1, A_2, \ldots, A_n  eventos que formam uma partição do espaço. Seja  B  um evento. Sejam conhecidas  P(A_i)  e  P(B | A_i) , para  i = 1, 2, \ldots, n . Então:
+
+$$
+P(A_i | B) = \frac{P(A_i) \cdot P(B | A_i)}{\sum_{j=1}^{n} P(A_j) \cdot P(B | A_j)}.
+$$
+
+### - O teorema de Bayes 
+
+É também chamado de teorema da probabilidade a posteriori. Ele relaciona uma das parcelas da probabilidade total com a própria probabilidade total.
+
+Exemplo 3 
+
+A urna A contém 3 fichas vermelhas e 2 azuis, e a urna B contém 2 vermelhas e 8 azuis. Joga-se uma moeda "honesta". Se a moeda der cara, extrai-se uma ficha da urna A; se der coroa, extrai-se uma ficha da urna B. Uma ficha vermelha é extraída. Qual a probabilidade de ter saído cara no lançamento?
+
+Resolução:
+
+Queremos: P(C | V) 
+
+Utilizando a fórmula da probabilidade total:
+
+$$
+P(V) = P(C) \cdot P(V | C) + P(K) \cdot P(V | K).
+$$
+
+Calculando,
+
+$$
+P(V) = \frac{1}{2} \cdot \frac{3}{5} + \frac{1}{2} \cdot \frac{2}{10} = \frac{3}{10} + \frac{1}{10} = \frac{4}{10}.
+$$
+
+Agora, calculamos  P(C | V) :
+
+$$
+P(C | V) = \frac{P(V | C) \cdot P(C)}{P(V)}.
+$$
+
+
+ 
+
+
+
 
 # - Referências Bibliográficas:
 
