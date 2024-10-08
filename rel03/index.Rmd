@@ -293,6 +293,148 @@ P(C | V) = \frac{P(V | C) \cdot P(C)}{P(V)}.
 $$
 
 
+
+Responda as seguintes questões a seguir, relacionadas a probabilidade:
+
+Exemplo 4:
+
+- Sabe-se que cada uma das pessoas A, B, C e D, falam a verdade uma dado instante com probabilidade de 1/3. Suponha que A faça uma afirmação, e D disse que C, que disse que B, que disse que A estava falando a verdade. Qual a probabilidade de que A tenha falado a verdade?
+
+Resolução
+
+Tudo começa com a pessoa D dizendo que as pessoas C, B e A falaram a verdade. Portanto, vamos calcular a probabilidade condicional de que a pessoa A falou a verdade na certeza que D disse a verdade, assim:
+
+\[
+P(A|D) = \frac{P(A \cap D)}{P(D)} 
+\]
+onde:
+
+(1)
+\[
+P(A \cap  D) =  \frac{1}{81} + \frac{4}{81}  + \frac{4}{81}  + \frac{4}{81}  = \frac{13}{81}
+\]
+
+(2)
+
+\[
+P(D) =  \frac{1}{81}  +  6\cdot  \frac{4}{81}  + \frac{16}{81}  = \frac{41}{81} 
+\]
+
+(Faça o diagrama de árvore, para simplificar o entendimento)
+
+As probabilidades (1) e (2) são encontradas pelo diagrama de árvore, daí:
+
+\vspace{0.4cm}
+\sc{\includegraphics[scale=0.1]{Figura/ma41a.jpeg} } 
+
+\[
+P(A\cap D) =  \frac{13}{81}   \cdot  \frac{81}{41}  = \frac{13}{41}  \approx 31,7\% 
+\]
+
+Exemplo 5:
+
+- Em um experimento de reprodução, sabe-se que o progenitor masculino possui dois genes dominantes (simbolizado por AA) ou um dominante e um recessivo (Aa). Esses dois casos são igualmente prováveis. O progenitor feminino é conhecido por dois genes recessivos (aa). Como a prole recebe um de cada progenitor, será Aa ou aa, e será possível dizer com certeza qual deles.
+
+a) Suponha que um dos descendentes seja Aa, qual é a probabilidade de que o progenitor masculino seja AA?
+
+b) Suponha que dois descendentes sejam ambos Aa, qual é a probabilidade de que o progenitor masculino seja AA?
+
+c) Se uma prole é aa, qual a probabilidade de que o progenitor masculino seja Aa?
+
+Resolução
+
+Queremos encontrar a probabilidade condicional de que o progenitor seja AA dado que o descendente seja Aa.
+
+
+
+Teorema de Bayes
+
+\[
+P(\text{AA}|\text{Aa}) = \frac{P(\text{Aa}|\text{AA}) \cdot P(\text{AA})}{P(\text{Aa})}
+\]
+
+
+Como o progenitor é AA ou Aa. Assim, temos que:
+
+\[
+P(\text{AA}) = P(\text{Aa}) = \frac{1}{2}
+\]
+
+Agora, podemos calcular \(P(\text{Aa})\) da seguinte forma:
+
+\[
+P(\text{Aa}) = P(\text{Aa}|\text{AA}) \cdot P(\text{AA}) + P(\text{Aa}|\text{Aa}) \cdot P(\text{Aa})
+\]
+
+onde:
+
+\[
+P(\text{Aa}|\text{AA}) = 1 \quad \text{e} \quad P(\text{Aa}|\text{Aa}) = \frac{1}{2}
+\]
+
+Assim, temos:
+
+\[
+P(\text{Aa}) = \frac{1 \cdot 1}{2} + \frac{1 \cdot 1}{2} = \frac{3}{4}
+\]
+
+Dessa forma:
+
+\[
+P(\text{AA}|\text{Aa}) = \frac{\frac{2}{3}}{\frac{3}{4}} = \frac{2}{3}
+\]
+
+2.3) Dado que \( B = \bigcup_{j=1}^{n} B_j \), com \( B_1, B_2, \dots, B_n \) mutuamente disjuntos, e que \( P(A | B_j) = p \) para todo \( j = 1, 2, \dots, n \), vamos demonstrar que \( P(A | B) = p \).
+
+Passo 1: Teorema da probabilidade total
+
+Sabemos que:
+\[
+P(A | B) = \frac{P(A \cap B)}{P(B)}
+\]
+Onde \( B = \bigcup_{j=1}^{n} B_j \), ou seja, \( B \) é a união dos eventos mutuamente disjuntos \( B_1, B_2, \dots, B_n \). Logo, podemos escrever:
+\[
+P(A \cap B) = P\left( A \cap \bigcup_{j=1}^{n} B_j \right)
+\]
+Como os eventos \( B_j \) são mutuamente disjuntos, isso implica que:
+\[
+P(A \cap B) = \sum_{j=1}^{n} P(A \cap B_j)
+\]
+
+Passo 2: Aplicando a definição de probabilidade condicional
+
+Sabemos que \( P(A \cap B_j) = P(A | B_j) \cdot P(B_j) \). Substituindo na equação anterior:
+\[
+P(A \cap B) = \sum_{j=1}^{n} P(A | B_j) \cdot P(B_j)
+\]
+
+Passo 3: Substituindo \( P(A | B_j) = p \)
+
+Pelo enunciado, sabemos que \( P(A | B_j) = p \) para todo \( j \). Portanto, a equação fica:
+\[
+P(A \cap B) = \sum_{j=1}^{n} p \cdot P(B_j)
+\]
+Fatorando \( p \) da soma:
+\[
+P(A \cap B) = p \cdot \sum_{j=1}^{n} P(B_j)
+\]
+
+Passo 4: Usando a probabilidade total de \( B \)
+
+Sabemos que \( \sum_{j=1}^{n} P(B_j) = P\left( \bigcup_{j=1}^{n} B_j \right) = P(B) \). Assim, temos:
+\[
+P(A \cap B) = p \cdot P(B)
+\]
+
+Passo 5: Substituindo na fórmula original de \( P(A | B) \)
+
+Agora, podemos substituir \( P(A \cap B) = p \cdot P(B) \) na fórmula de \( P(A | B) \):
+\[
+P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{p \cdot P(B)}{P(B)} = p
+\]
+
+Portanto, mostramos que \( P(A | B) = p \).
+
  
 
 
