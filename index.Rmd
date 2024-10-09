@@ -176,14 +176,9 @@ Relatórios desenvolvidos:
 
 - [Relatório 01 (06/09/2024)](rel01/index.html){target="_blank"}
 - [Relatório 02 (13/09/2024)](rel02/index.html){target="_blank"}
-- [Relatório 03 (04/11/2024)](rel03/index.html){target="_blank"}
+- [Relatório 03 (03/10/2024)](rel03/index.html){target="_blank"}
 - [Relatório 04 (11/11/2024)](rel03/index.html){target="_blank"}
 - [Relatório 05 (18/11/2024)](rel03/index.html){target="_blank"}
 - [Relatório 06 (25/11/2024)](rel03/index.html){target="_blank"}
 - [Relatório 07 (03/11/2024)](rel03/index.html){target="_blank"}
 
-
-
-$ git add .
-$ git commit -m "Comentário a ser inserido!"
-$ git push

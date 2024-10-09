@@ -1,7 +1,7 @@
 ---
 title: "Relatório 03 - Estatística Descritiva"
 author: "Leonardo Lois Rodrigues"
-date: "27/09/2024"
+date: "03/10/2024"
 header-includes:
   - \usepackage{titling}
   - \pretitle{\begin{center}
