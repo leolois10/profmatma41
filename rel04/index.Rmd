@@ -1,7 +1,7 @@
 ---
 title: "Relatório 04 - EM CONSTRUÇÃO"
 author: "Leonardo Lois Rodrigues"
-date: "27/09/2024"
+date: "11/10/2024"
 header-includes:
   - \usepackage{titling}
   - \pretitle{\begin{center}
