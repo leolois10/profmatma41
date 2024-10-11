@@ -1,5 +1,5 @@
 ---
-title: "Relatório 04 - EM CONSTRUÇÃO"
+title: "Relatório 04 - Distribuição de Probabilidade"
 author: "Leonardo Lois Rodrigues"
 date: "11/10/2024"
 header-includes:
@@ -173,9 +173,6 @@ Estatística básica : probabilidade e inferência,
 volume único I Luiz Gonzaga Morettin. -- São Paulo : 
 Pearson Prentice Hall, 201 O.
 
-$ git add .
-$ git commit -m "Comentário a ser inserido!"
-$ git push
 
 
 
