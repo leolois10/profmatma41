@@ -132,7 +132,9 @@ Essa é a função geradora de momentos de uma variável normal \( N(0, \sigma^2
 Como a função geradora de momentos de \( S_n \) converge para a função geradora de momentos de uma variável normal \( N(0, \sigma^2) \), pelo Teorema da Continuidade de Lévy, a distribuição de \( S_n \) converge para \( N(0, \sigma^2) \). Portanto, ao padronizar \( S_n \) (dividindo por \( \sigma \)), obtemos a convergência para a distribuição normal padrão \( N(0, 1) \), o que completa a prova do Teorema do Limite Central.
 
 ## Exemplos de aplicação 
-### Lança-se uma moeda 20 vezes. Qual a probabilidade de se obter de urna a cinco 
+### Exemplo 1: Lançamento de uma moeda
+
+Lança-se uma moeda 20 vezes. Qual a probabilidade de se obter de uma a cinco 
 caras, usando: 
 a) distribuição binomial; 
 
@@ -177,7 +179,7 @@ O erro é de \( 0,001516 \), mas no caso, \( n = 20 \) (pequeno) e também a pro
 
 Logo, para \( n \) grande a aproximação será realmente boa.
 
-### - Exemplo: Distribuição de Poisson
+### - Exemplo 2: Distribuição de Poisson
 
 
 Fizemos uma simulação com 10.000 amostras, o tamanho das amostras foram 01,   05,  50 e 5000, respectivamente.

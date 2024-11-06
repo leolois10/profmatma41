@@ -29,136 +29,192 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # - Objetivo:
 
-Descrever sobre teoria de conjuntos, exemplos e aplicações.
+No tema Teoria da Estimação, dar exemplos de  Método dos Momentos,  Método da Máxima Verossimilhança e Dos
 
-Diante do objetivo do relatório, apresentaremos nas próximas subseções os pontos a serem discutidos:
+# - Método dos Momentos para Normal
 
-- Experimento aleatório;
+## - Exemplo 1: 
 
-- Conjunto;
+Suponha que \(X_1, \dots, X_n\) são iid \(n(\theta, \sigma^2)\). Na notação anterior, \(\theta_1 = \theta\) e \(\theta_2 = \sigma^2\). Temos \(m_1 = \bar{X}, \, m_2 = \frac{1}{n}\sum X_i^2, \, \mu_1 = \theta, \, \mu_2 = \theta^2 + \sigma^2\), e precisamos resolver
+\[
+\bar{X} = \theta, \quad \frac{1}{n} \sum X_i^2 = \theta^2 + \sigma^2.
+\]
 
-- Espaço amostral;
+Resolvendo para \(\theta\) e \(\sigma^2\) obtemos os estimadores pelo método dos momentos
+\[
+\hat{\theta} = \bar{X} \quad \text{e} \quad \hat{\sigma}^2 = \frac{1}{n} \sum X_i^2 - \bar{X}^2 = \frac{1}{n} \sum (X_i - \bar{X})^2.
+\]
 
-- Evento;
-
-- Operações com conjuntos;
-
-- Probabilidade;
-
-- Breve Conclusão.
-
-# - Teoria de conjuntos:
-
-## -  Experimento Aleatório;
-
-A cada experimento aleatório está associado o resultado obtido, que não é previsível, chamado evento aleatório.
-
-Exemplos:
-
-a) lançamento de uma moeda honesta; 
-
-b) lançamento de um dado; 
-
-No exemplo a os eventos associados são cara (C) e coroa (K); 
-
-No exemplo b poderá ocorrer uma das faces 1, 2, 3, 4, 5 ou 6.
+Neste exemplo simples, a solução pelo método dos momentos coincide com nossa intuição e talvez dê alguma credibilidade a ambos. O método é de certa forma mais útil, no entanto, quando nenhum estimador óbvio sugere a si mesmo.
 
 
-## - População ou conjunto:
+O código a seguir gera uma amostra aleatória de 100 valores a partir de uma distribuição normal com média theta = 5 e variância sigma_squared = 2. Depois, calcula dois estimadores usando o método dos momentos:
 
-População: é o conjunto formado por indivíduos ou objetos que têm pelo menos uma 
-variável comum e observável. Podemos falar em: 
+Estimador de theta (θ̂1): é a média amostral.
+Estimador de sigma^2 (σ̂^2): é a variância amostral.
 
-• população dos alunos do primeiro período de uma faculdade; 
+```{r eval=FALSE, warning=TRUE}
+# Gerando uma amostra de dados (simulação para fins de exemplo)
+set.seed(123) # Para reprodutibilidade
+n <- 100
+theta <- 5
+sigma_squared <- 2
+sample_data <- rnorm(n, mean = theta, sd = sqrt(sigma_squared))
 
-• população dos operários da indústria automobilística; 
+# Método dos Momentos
+theta_hat <- mean(sample_data)  # Estimador para theta (média da amostra)
+sigma_squared_hat <- mean((sample_data - theta_hat)^2)  # Estimador para sigma^2 (variância da amostra)
 
-• população de alturas em cm das pessoas de determinado bairro; 
+# Resultados
+cat("Estimador de theta (θ̂1):", theta_hat, "\n")
+cat("Estimador de sigma^2 (σ̂^2):", sigma_squared_hat, "\n")
 
-• população de peças fabricadas numa linha de produção, e assim por diante.
+```
 
-## - Espaço Amostral
+Para este caso, aqui estão os resultados aproximados esperados:
 
-Espaço amostral de um experimento aleatório é o conjunto dos resultados do experimento. Os elementos do espaço amostral serão chamados também de pontos amostrais. 
-Representaremos o espaço amostral por Ω. 
+```{r eval=FALSE, warning=TRUE}
+Estimador de theta (θ̂1): 4.961977 
+Estimador de sigma^2 (σ̂^2): 1.827586
 
-Exemplos:
+```
 
-a) lançamento de uma moeda honesta; 
+# - Método dos Momentos para Binomial
 
-Ω = {C, k} 
+## - Exemplo 2: 
 
-b) lançamento de um dado;
+Sejam \(X_1, \dots, X_n\) iid binomial(\(k, p\)), isto é,
+\[
+P(X_i = x | k, p) = \binom{k}{x} p^x (1 - p)^{k - x}, \quad x = 0, 1, \dots, k.
+\]
 
-Ω ={l, 2, 3, 4, 5, 6} 
+Aqui assumimos que tanto \(k\) quanto \(p\) são desconhecidos e desejamos estimadores pontuais para ambos os parâmetros. (Esta aplicação um tanto incomum do modelo binomial tem sido usada para estimar taxas de crimes para crimes que se sabe ter muitas ocorrências não relatadas. Para tal crime, tanto a taxa real de ocorrência, \(p\), quanto o número total de ocorrências, \(k\), são desconhecidos.)
 
-c) lançamento de duas moedas; 
+Igualando os dois primeiros momentos amostrais aos da população, obtemos o sistema de equações
+\[
+\bar{X} = kp, \quad \frac{1}{n} \sum X_i^2 = kp(1 - p) + k^2 p^2,
+\]
+o qual agora deve ser resolvido para \(k\) e \(p\). Após um pouco de álgebra, obtemos os estimadores pelo método dos momentos
+\[
+\hat{k} = \frac{\bar{X}^2}{\bar{X} - (1/n) \sum (X_i - \bar{X})^2}.
+\]
 
-Ω ={(C, C), (C, K), (K, C), (K, K)} 
+e
 
-d) determinação da vida útil de um componente eletrônico. 
+\[
+\tilde{p} = \frac{\bar{X}}{\bar{k}}.
+\]
 
-Ω = {t ∈ IR; t ≥ O} 
+```{r eval=FALSE, warning=TRUE}
+# Gerando uma amostra de dados binomiais (simulação para fins de exemplo)
+set.seed(123) # Para reprodutibilidade
+n <- 100
+k <- 10
+p <- 0.3
+sample_data <- rbinom(n, size = k, prob = p)
 
-e) Detenninação do espaço an1ostral: podemos determiná-lo por uma tabela de dupla 
-entrada (produto ca1tesiano ). 
+# Método dos Momentos para a distribuição binomial
+X_bar <- mean(sample_data)  # Média da amostra
+S_squared <- mean((sample_data - X_bar)^2)  # Variância amostral
 
-![Figura 1](tabela1.png)
+# Calculando o estimador para k usando o método dos momentos
+k_hat <- X_bar^2 / (X_bar - S_squared)
+
+# Calculando o estimador para p
+p_hat <- X_bar / k_hat
+
+# Resultados
+cat("Estimador de k (k̂):", k_hat, "\n")
+cat("Estimador de p (p̂):", p_hat, "\n")
+```
+
+# - Método da máxima Verossimilhança
+
+## -  Exemplo 3: Método da máxima Verossimilhança - EMV de $\mu$ de uma normal
+
+Seja uma amostra aleatória \( X_1, X_2, \dots, X_n \) de uma normal com média \( \mu \) e variância \( 1 \). Vamos determinar o estimador do parâmetro \( \mu \) pelo método de máxima verossimilhança. A função de log-verossimilhança pode ser dada por:
+
+\[
+l(\mu; x) = \log \left( \prod_{i=1}^{n} \frac{1}{\sqrt{2 \pi}} e^{-\frac{(x_i - \mu)^2}{2}} \right)
+\]
+
+\[
+= \log \left( \frac{1}{\sqrt{2 \pi}} \right)^{n/2} e^{-\frac{\sum_{i=1}^{n} (x_i - \mu)^2}{2}} 
+\]
+
+\[
+= \frac{n}{2} \log \left( \frac{1}{2 \pi} \right) - \frac{\sum_{i=1}^{n} (x_i - \mu)^2}{2}.
+\]
+
+Tomando a primeira derivada em relação a \( \mu \), temos
+
+\[
+0 = \frac{d}{d\mu} l(\mu; x) = \frac{\sum_{i=1}^{n} (x_i - \hat{\mu})}{2}.
+\]
+
+Isolando \( \hat{\mu} \), segue que
+
+\[
+\hat{\mu} = \frac{\sum_{i=1}^{n} X_i}{n} = \bar{X}.
+\]
+
+Para verificar se \( \hat{\mu} \) é um estimador de máxima verossimilhança, calculemos a segunda derivada da log-verossimilhança, isto é,
+
+\[
+\frac{d^2}{d\mu^2} l(\mu; x) = -\frac{n}{2} < 0.
+\]
+
+Como \( \hat{\mu} \) é um ponto de máximo, logo, é um estimador de máxima verossimilhança.
 
 
-## - Evento
+## - Exemplo 4: Método da máxima Verossimilhança - EMV de $p$ de uma distribuição Bernoulli
 
-O evento aleatório pode ser um único ponto amostral ou uma reunião deles, como 
-veremos no exemplo a seguir: 
+Seja $X_1, X_2, \dots, X_n$ uma amostra aleatória de uma distribuição Bernoulli de parâmetro $p$, então um estimador de máxima verossimilhança de $p$ pode ser obtido a partir da função de verossimilhança dada por:
+\[
+L(p; x) = \prod_{i=1}^{n} p^{x_i} (1 - p)^{1 - x_i}
+\]
+\[
+= p^{\sum_{i=1}^{n} x_i} (1 - p)^{\sum_{i=1}^{n} (1 - x_i)}
+\]
+\[
+= p^{\sum_{i=1}^{n} x_i} (1 - p)^{n - \sum_{i=1}^{n} x_i}.
+\]
 
-Lançam - se dois dados. Enumerar os seguintes eventos: 
+A função de log-verossimilhança será mais fácil, para determinarmos o estimador pontual de $p$ que segue,
+\[
+l(p; x) = \log \left( p^{\sum_{i=1}^{n} x_i} (1 - p)^{n - \sum_{i=1}^{n} x_i} \right)
+\]
+\[
+= \log(p) \sum_{i=1}^{n} x_i + \left( n - \sum_{i=1}^{n} x_i \right) \log(1 - p)
+\]
+\[
+= \log(p) \sum_{i=1}^{n} x_i + n \log(1 - p) - \log(1 - p) \sum_{i=1}^{n} x_i.
+\]
 
-A: saída de faces iguais; 
+Derivando (9.9) em relação a $p$ e igualando a zero, temos
+\[
+0 = \frac{\sum_{i=1}^{n} x_i}{\hat{p}} + \frac{n}{1 - \hat{p}} - \frac{\sum_{i=1}^{n} x_i}{1 - \hat{p}}
+\]
+\[
+= (1 - \hat{p}) \frac{\sum_{i=1}^{n} x_i + n \hat{p} - \hat{p} \sum_{i=1}^{n} x_i}{\hat{p}(1 - \hat{p})}
+\]
+\[
+= (1 - \hat{p}) \sum_{i=1}^{n} x_i + n \hat{p} - \hat{p} \sum_{i=1}^{n} x_i
+\]
+\[
+= n \sum_{i=1}^{n} x_i + n \hat{p}.
+\]
 
-B: saída de faces cuja soma seja igual a 10; 
-
-C: saída de faces cuja son1a seja menor que 2;
-
-D: saída de faces cuja soma seja menor que 15; 
-
-E: saída de faces onde uma face é o dobro da outra. 
-
-Os eventos pedidos são: 
-
-A = {(1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6)} 
-
-B = {(4, 6), (5, 5), (6, 4)} 
-
-C = ∅ (evento impossível) 
-
-D = Ω (evento certo) 
-
-E= {(l, 2), (2, 1), (2, 4), (3, 6), (4, 2), (6, 3)}
-
-Uma outra maneira de determinar o espaço amostral desse experimento é usar o 
-diagrama ern árvore:
-
-![Figura 2](tabela2.png)
-
-
-## - Operações
-
-Sejam A e B dois eventos de F(Ω). 
-As seguintes operações são definidas: 
-
-![Figura 3](tabela3.png)
+Logo, $\hat{p} = \bar{X}$. Verificando se $\hat{p}$ é um ponto de máximo, calculamos a segunda derivada da função de log-verossimilhança com relação a $p$, isto é,
+\[
+\frac{d^2 l(p; x)}{d p^2} = -\frac{\sum_{i=1}^{n} x_i}{p^2} - \frac{\left(n - \sum_{i=1}^{n} x_i\right)}{(1 - p)^2} < 0,
+\]
+uma vez que $0 < p < 1$, e $0 \leq \sum_{i=1}^{n} x_i \leq n$. Considerando que $\hat{p}$ é um ponto de máximo, logo é um estimador de máxima verossimilhança.
 
 
-# - Probabilidade:
-
-EM CONSTRUÇÃO
 
 # - Referências Bibliográficas:
 
-Morettin, Luiz Gonzaga 
-Estatística básica : probabilidade e inferência, 
-volume único I Luiz Gonzaga Morettin. -- São Paulo : 
-Pearson Prentice Hall, 201 O.
 
 
 
