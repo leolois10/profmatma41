@@ -214,5 +214,7 @@ uma vez que $0 < p < 1$, e $0 \leq \sum_{i=1}^{n} x_i \leq n$. Considerando que 
 
 
 # - Referências Bibliográficas:
+- CASELLA, George; BERGER, Roger L. Inferência estatística. Cengage Learning, 2010.
+- BATISTA, Ben Dêvide de Oliveira. Estatística & Probabilidade aplicadas às Engenharias e Ciências, 2024.
 
 
