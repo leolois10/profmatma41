@@ -448,13 +448,14 @@ display: none;
 <li><a href="#exemplo-3-método-da-máxima-verossimilhança---emv-de-mu-de-uma-normal" id="toc-exemplo-3-método-da-máxima-verossimilhança---emv-de-mu-de-uma-normal"><span class="toc-section-number">4.1</span> - Exemplo 3: Método da máxima Verossimilhança - EMV de <span class="math inline">\(\mu\)</span> de uma normal</a></li>
 <li><a href="#exemplo-4-método-da-máxima-verossimilhança---emv-de-p-de-uma-distribuição-bernoulli" id="toc-exemplo-4-método-da-máxima-verossimilhança---emv-de-p-de-uma-distribuição-bernoulli"><span class="toc-section-number">4.2</span> - Exemplo 4: Método da máxima Verossimilhança - EMV de <span class="math inline">\(p\)</span> de uma distribuição Bernoulli</a></li>
 </ul></li>
-<li><a href="#referências-bibliográficas" id="toc-referências-bibliográficas"><span class="toc-section-number">5</span> - Referências Bibliográficas:</a></li>
+<li><a href="#estimador-de-mínimos-quadrados-de-mrls" id="toc-estimador-de-mínimos-quadrados-de-mrls"><span class="toc-section-number">5</span> - Estimador de mínimos quadrados de MRLS</a></li>
+<li><a href="#referências-bibliográficas" id="toc-referências-bibliográficas"><span class="toc-section-number">6</span> - Referências Bibliográficas:</a></li>
 </ul>
 </div>
 
 <div id="objetivo" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> - Objetivo:</h1>
-<p>No tema Teoria da Estimação, dar exemplos de Método dos Momentos, Método da Máxima Verossimilhança e Dos</p>
+<p>No tema Teoria da Estimação, dar exemplos de Método dos Momentos, Método da Máxima Verossimilhança e Estimador de mínimos quadrado.</p>
 </div>
 <div id="método-dos-momentos-para-normal" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> - Método dos Momentos para Normal</h1>
@@ -512,6 +513,7 @@ o qual agora deve ser resolvido para <span class="math inline">\(k\)</span> e <s
 <p><span class="math display">\[
 \tilde{p} = \frac{\bar{X}}{\bar{k}}.
 \]</span></p>
+<p>Esse código abaixo gera uma amostra de dados binomiais e aplica o Método dos Momentos para estimar os parâmetros da distribuição binomial, especificamente o número de tentativas k e a probabilidade de sucesso p.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Gerando uma amostra de dados binomiais (simulação para fins de exemplo)</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Para reprodutibilidade</span></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
@@ -532,6 +534,7 @@ o qual agora deve ser resolvido para <span class="math inline">\(k\)</span> e <s
 <span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co"># Resultados</span></span>
 <span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Estimador de k (k̂):&quot;</span>, k_hat, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
 <span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Estimador de p (p̂):&quot;</span>, p_hat, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<p>Estimador de p (p̂): 0.3047682</p>
 </div>
 </div>
 <div id="método-da-máxima-verossimilhança" class="section level1" number="4">
@@ -604,8 +607,94 @@ l(p; x) = \log \left( p^{\sum_{i=1}^{n} x_i} (1 - p)^{n - \sum_{i=1}^{n} x_i} \r
 uma vez que <span class="math inline">\(0 &lt; p &lt; 1\)</span>, e <span class="math inline">\(0 \leq \sum_{i=1}^{n} x_i \leq n\)</span>. Considerando que <span class="math inline">\(\hat{p}\)</span> é um ponto de máximo, logo é um estimador de máxima verossimilhança.</p>
 </div>
 </div>
-<div id="referências-bibliográficas" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> - Referências Bibliográficas:</h1>
+<div id="estimador-de-mínimos-quadrados-de-mrls" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> - Estimador de mínimos quadrados de MRLS</h1>
+<p>Sejam os valores <span class="math inline">\(\hat{\beta}_0\)</span> e <span class="math inline">\(\hat{\beta}_1\)</span>, que minimizam <span class="math inline">\(\sum_{i=1}^n \epsilon_i^2 = \sum_{i=1}^n (Y_i - \beta_0 - \beta_1 X_i)^2\)</span> é igual a
+<span class="math display">\[
+\hat{\beta}_0 = \overline{Y} - \hat{\beta}_1 \overline{X},
+\]</span>
+e
+<span class="math display">\[
+\hat{\beta}_1 = \frac{\sum_{i=1}^n Y_i X_i - \frac{\sum_{i=1}^n Y_i \sum_{i=1}^n X_i}{n}}{\sum_{i=1}^n X_i^2 - \left(\frac{\sum_{i=1}^n X_i}{n}\right)^2}.
+\]</span>
+respectivamente. Então <span class="math inline">\(\hat{\beta}_0\)</span> e <span class="math inline">\(\hat{\beta}_1\)</span> são os estimadores de mínimos quadrados de <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>, respectivamente.</p>
+<p>Seja <span class="math inline">\(\epsilon_i = Y_i - \beta_0 - \beta_1 X_i\)</span> a partir da expressão (11.4), então para minimizar a soma de quadrados dos dos erros ao longo de todos os <span class="math inline">\(n\)</span> pares <span class="math inline">\((X_i, Y_i)\)</span>, temos
+<span class="math display">\[
+Q = \sum_{i=1}^n \epsilon_i^2 = \sum_{i=1}^n (Y_i - \beta_0 - \beta_1 X_i)^2.
+\]</span>
+Derivando <span class="math inline">\(Q\)</span> em relação aos parâmetros <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>, e igualando a zero as funções resultantes, obtemos assim os estimadores de mínimos quadrados. Assim,
+<span class="math display">\[
+\frac{\partial Q}{\partial \beta_0} = -2 \sum_{i=1}^n (Y_i - \beta_0 - \beta_1 X_i),
+\]</span>
+<span class="math display">\[
+\frac{\partial Q}{\partial \beta_1} = -2 \sum_{i=1}^n (Y_i - \beta_0 - \beta_1 X_i) X_i.
+\]</span></p>
+<p>Igualando a zero, teremos o que chamamos de sistema de equações normais (SEN). Assim,</p>
+<p><span class="math display">\[
+-2 \sum_{i=1}^n (Y_i - \hat{\beta}_0 - \hat{\beta}_1 X_i) = 0,
+\]</span>
+<span class="math display">\[
+-2 \left[ \sum_{i=1}^n Y_i - n \hat{\beta}_0 - \hat{\beta}_1 \sum_{i=1}^n X_i \right] = 0,
+\]</span>
+<span class="math display">\[
+\sum_{i=1}^n Y_i - n \hat{\beta}_0 - \hat{\beta}_1 \sum_{i=1}^n X_i = 0,
+\]</span>
+<span class="math display">\[
+n \hat{\beta}_0 + \hat{\beta}_1 \sum_{i=1}^n X_i = \sum_{i=1}^n Y_i,
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+-2 \sum_{i=1}^n (Y_i - \hat{\beta}_0 - \hat{\beta}_1 X_i) X_i = 0,
+\]</span>
+<span class="math display">\[
+\sum_{i=1}^n Y_i X_i - \hat{\beta}_0 \sum_{i=1}^n X_i - \hat{\beta}_1 \sum_{i=1}^n X_i^2 = 0,
+\]</span>
+<span class="math display">\[
+\hat{\beta}_0 \sum_{i=1}^n X_i + \hat{\beta}_1 \sum_{i=1}^n X_i^2 = \sum_{i=1}^n Y_i X_i.
+\]</span></p>
+<p>As equações (11.6) e (11.7) formam o SEN,
+<span class="math display">\[
+\begin{cases}
+n \hat{\beta}_0 + \hat{\beta}_1 \sum_{i=1}^n X_i = \sum_{i=1}^n Y_i \\
+\hat{\beta}_0 \sum_{i=1}^n X_i + \hat{\beta}_1 \sum_{i=1}^n X_i^2 = \sum_{i=1}^n Y_i X_i.
+\end{cases}
+\]</span></p>
+<p>Isolando <span class="math inline">\(\hat{\beta}_0\)</span> na primeira equação do SEN, temos</p>
+<p><span class="math display">\[
+n \hat{\beta}_0 + \hat{\beta}_1 \sum_{i=1}^n X_i = \sum_{i=1}^n Y_i,
+\]</span>
+<span class="math display">\[
+n \hat{\beta}_0 = \sum_{i=1}^n Y_i - \hat{\beta}_1 \sum_{i=1}^n X_i,
+\]</span>
+<span class="math display">\[
+\hat{\beta}_0 = \frac{\sum_{i=1}^n Y_i}{n} - \hat{\beta}_1 \frac{\sum_{i=1}^n X_i}{n},
+\]</span>
+<span class="math display">\[
+\hat{\beta}_0 = \overline{Y} - \hat{\beta}_1 \overline{X}.
+\]</span></p>
+<p>Substituindo esse resultado na segunda equação do SEN, temos</p>
+<p><span class="math display">\[
+(\overline{Y} - \hat{\beta}_1 \overline{X}) \sum_{i=1}^n X_i + \hat{\beta}_1 \sum_{i=1}^n X_i^2 = \sum_{i=1}^n Y_i X_i,
+\]</span>
+<span class="math display">\[
+\frac{\sum_{i=1}^n Y_i \sum_{i=1}^n X_i}{n} - \hat{\beta}_1 \frac{\sum_{i=1}^n X_i \sum_{i=1}^n X_i}{n} + \hat{\beta}_1 \sum_{i=1}^n X_i^2 = \sum_{i=1}^n Y_i X_i,
+\]</span>
+<span class="math display">\[
+\hat{\beta}_1 \left[ \sum_{i=1}^n X_i^2 - \frac{\left( \sum_{i=1}^n X_i \right)^2}{n} \right] = \sum_{i=1}^n Y_i X_i - \frac{\sum_{i=1}^n Y_i \sum_{i=1}^n X_i}{n},
+\]</span>
+<span class="math display">\[
+\hat{\beta}_1 = \frac{\sum_{i=1}^n Y_i X_i - \frac{\sum_{i=1}^n Y_i \sum_{i=1}^n X_i}{n}}{\sum_{i=1}^n X_i^2 - \frac{\left( \sum_{i=1}^n X_i \right)^2}{n}},
+\]</span>
+<span class="math display">\[
+\hat{\beta}_1 = \frac{SP_{XY}}{SQ_X}.
+\]</span></p>
+<p>Portanto o modelo estimado é dado por:</p>
+<p><span class="math display">\[
+\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X.
+\]</span></p>
+</div>
+<div id="referências-bibliográficas" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> - Referências Bibliográficas:</h1>
 <ul>
 <li>CASELLA, George; BERGER, Roger L. Inferência estatística. Cengage Learning, 2010.</li>
 <li>BATISTA, Ben Dêvide de Oliveira. Estatística &amp; Probabilidade aplicadas às Engenharias e Ciências, 2024.</li>

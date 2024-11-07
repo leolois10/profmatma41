@@ -1,5 +1,5 @@
 ---
-title: "Relatório 03 - Estatística Descritiva"
+title: "Relatório 03 - Probabilidade"
 author: "Leonardo Lois Rodrigues"
 date: "04/10/2024"
 header-includes:

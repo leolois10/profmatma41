@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # - Objetivo:
 
-No tema Teoria da Estimação, dar exemplos de  Método dos Momentos,  Método da Máxima Verossimilhança e Dos
+No tema Teoria da Estimação, dar exemplos de  Método dos Momentos,  Método da Máxima Verossimilhança e Estimador de mínimos quadrado.
 
 # - Método dos Momentos para Normal
 
@@ -105,6 +105,8 @@ e
 \tilde{p} = \frac{\bar{X}}{\bar{k}}.
 \]
 
+Esse código abaixo gera uma amostra de dados binomiais e aplica o Método dos Momentos para estimar os parâmetros da distribuição binomial, especificamente o número de tentativas k e a probabilidade de sucesso p.
+
 ```{r eval=FALSE, warning=TRUE}
 # Gerando uma amostra de dados binomiais (simulação para fins de exemplo)
 set.seed(123) # Para reprodutibilidade
@@ -127,6 +129,7 @@ p_hat <- X_bar / k_hat
 cat("Estimador de k (k̂):", k_hat, "\n")
 cat("Estimador de p (p̂):", p_hat, "\n")
 ```
+Estimador de p (p̂): 0.3047682 
 
 # - Método da máxima Verossimilhança
 
@@ -211,6 +214,105 @@ Logo, $\hat{p} = \bar{X}$. Verificando se $\hat{p}$ é um ponto de máximo, calc
 \]
 uma vez que $0 < p < 1$, e $0 \leq \sum_{i=1}^{n} x_i \leq n$. Considerando que $\hat{p}$ é um ponto de máximo, logo é um estimador de máxima verossimilhança.
 
+# - Estimador de mínimos quadrados de MRLS
+
+Sejam os valores $\hat{\beta}_0$ e $\hat{\beta}_1$, que minimizam $\sum_{i=1}^n \epsilon_i^2 = \sum_{i=1}^n (Y_i - \beta_0 - \beta_1 X_i)^2$ é igual a
+\[
+\hat{\beta}_0 = \overline{Y} - \hat{\beta}_1 \overline{X},
+\]
+e
+\[
+\hat{\beta}_1 = \frac{\sum_{i=1}^n Y_i X_i - \frac{\sum_{i=1}^n Y_i \sum_{i=1}^n X_i}{n}}{\sum_{i=1}^n X_i^2 - \left(\frac{\sum_{i=1}^n X_i}{n}\right)^2}.
+\]
+respectivamente. Então $\hat{\beta}_0$ e $\hat{\beta}_1$ são os estimadores de mínimos quadrados de $\beta_0$ e $\beta_1$, respectivamente.
+
+
+
+Seja $\epsilon_i = Y_i - \beta_0 - \beta_1 X_i$ a partir da expressão (11.4), então para minimizar a soma de quadrados dos dos erros ao longo de todos os $n$ pares $(X_i, Y_i)$, temos
+\[
+Q = \sum_{i=1}^n \epsilon_i^2 = \sum_{i=1}^n (Y_i - \beta_0 - \beta_1 X_i)^2.
+\]
+Derivando $Q$ em relação aos parâmetros $\beta_0$ e $\beta_1$, e igualando a zero as funções resultantes, obtemos assim os estimadores de mínimos quadrados. Assim,
+\[
+\frac{\partial Q}{\partial \beta_0} = -2 \sum_{i=1}^n (Y_i - \beta_0 - \beta_1 X_i),
+\]
+\[
+\frac{\partial Q}{\partial \beta_1} = -2 \sum_{i=1}^n (Y_i - \beta_0 - \beta_1 X_i) X_i.
+\]
+
+Igualando a zero, teremos o que chamamos de sistema de equações normais (SEN). Assim,
+
+\[
+-2 \sum_{i=1}^n (Y_i - \hat{\beta}_0 - \hat{\beta}_1 X_i) = 0,
+\]
+\[
+-2 \left[ \sum_{i=1}^n Y_i - n \hat{\beta}_0 - \hat{\beta}_1 \sum_{i=1}^n X_i \right] = 0,
+\]
+\[
+\sum_{i=1}^n Y_i - n \hat{\beta}_0 - \hat{\beta}_1 \sum_{i=1}^n X_i = 0,
+\]
+\[
+n \hat{\beta}_0 + \hat{\beta}_1 \sum_{i=1}^n X_i = \sum_{i=1}^n Y_i,
+\]
+
+e
+
+\[
+-2 \sum_{i=1}^n (Y_i - \hat{\beta}_0 - \hat{\beta}_1 X_i) X_i = 0,
+\]
+\[
+\sum_{i=1}^n Y_i X_i - \hat{\beta}_0 \sum_{i=1}^n X_i - \hat{\beta}_1 \sum_{i=1}^n X_i^2 = 0,
+\]
+\[
+\hat{\beta}_0 \sum_{i=1}^n X_i + \hat{\beta}_1 \sum_{i=1}^n X_i^2 = \sum_{i=1}^n Y_i X_i.
+\]
+
+As equações (11.6) e (11.7) formam o SEN,
+\[
+\begin{cases}
+n \hat{\beta}_0 + \hat{\beta}_1 \sum_{i=1}^n X_i = \sum_{i=1}^n Y_i \\
+\hat{\beta}_0 \sum_{i=1}^n X_i + \hat{\beta}_1 \sum_{i=1}^n X_i^2 = \sum_{i=1}^n Y_i X_i.
+\end{cases}
+\]
+
+Isolando $\hat{\beta}_0$ na primeira equação do SEN, temos
+
+\[
+n \hat{\beta}_0 + \hat{\beta}_1 \sum_{i=1}^n X_i = \sum_{i=1}^n Y_i,
+\]
+\[
+n \hat{\beta}_0 = \sum_{i=1}^n Y_i - \hat{\beta}_1 \sum_{i=1}^n X_i,
+\]
+\[
+\hat{\beta}_0 = \frac{\sum_{i=1}^n Y_i}{n} - \hat{\beta}_1 \frac{\sum_{i=1}^n X_i}{n},
+\]
+\[
+\hat{\beta}_0 = \overline{Y} - \hat{\beta}_1 \overline{X}.
+\]
+
+Substituindo esse resultado na segunda equação do SEN, temos
+
+\[
+(\overline{Y} - \hat{\beta}_1 \overline{X}) \sum_{i=1}^n X_i + \hat{\beta}_1 \sum_{i=1}^n X_i^2 = \sum_{i=1}^n Y_i X_i,
+\]
+\[
+\frac{\sum_{i=1}^n Y_i \sum_{i=1}^n X_i}{n} - \hat{\beta}_1 \frac{\sum_{i=1}^n X_i \sum_{i=1}^n X_i}{n} + \hat{\beta}_1 \sum_{i=1}^n X_i^2 = \sum_{i=1}^n Y_i X_i,
+\]
+\[
+\hat{\beta}_1 \left[ \sum_{i=1}^n X_i^2 - \frac{\left( \sum_{i=1}^n X_i \right)^2}{n} \right] = \sum_{i=1}^n Y_i X_i - \frac{\sum_{i=1}^n Y_i \sum_{i=1}^n X_i}{n},
+\]
+\[
+\hat{\beta}_1 = \frac{\sum_{i=1}^n Y_i X_i - \frac{\sum_{i=1}^n Y_i \sum_{i=1}^n X_i}{n}}{\sum_{i=1}^n X_i^2 - \frac{\left( \sum_{i=1}^n X_i \right)^2}{n}},
+\]
+\[
+\hat{\beta}_1 = \frac{SP_{XY}}{SQ_X}.
+\]
+
+Portanto o modelo estimado é dado por:
+
+\[
+\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X.
+\] 
 
 
 # - Referências Bibliográficas:
