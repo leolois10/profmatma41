@@ -182,6 +182,4 @@ Relatórios desenvolvidos:
 - [Relatório 06 (25/11/2024)](rel06/index.html){target="_blank"}
 - [Relatório 07 (03/11/2024)](rel07/index.html){target="_blank"}
 
-$ git add .
-$ git commit -m "Comentário a ser inserido!"
-$ git push
+
